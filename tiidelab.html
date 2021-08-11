@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var ussd = prompt(`Welcome to Our Online Bank Service.
+        1. Proceed
+        2. Cancel`);
+      ussd = Number(ussd);
+      if (ussd == 1 && typeof ussd == "number") {
+        var transactions = prompt(`
+            1. Airtime-Self
+            2. Airtime-Others
+            3. Data
+            4. Transfer`);
+        transactions = Number(transactions);
+        if (transactions == 1 && typeof transactions == "number") {
+          var amountSelf = prompt("please enter amount");
+          amountSelf = Number(amountSelf);
+          if (typeof amountSelf == "number") {
+            alert("Recharge Successful");
+          } else {
+            alert("Input a valid amonut");
+          }
+        } else if (transactions == 2 && typeof transactions == "number") {
+          var numberOthers = prompt("please enter recepient number");
+          var amountOthers = prompt("please enter amount");
+          var pin = prompt("please input your 4 digit passcode");
+          numberOthers = Number(numberOthers);
+          amountOthers = Number(amountOthers);
+          if (
+            typeof amountOthers == "number" &&
+            typeof numberOthers == "number"
+          ) {
+            var rechargeConfirm = confirm(
+              "will you like to recharge " +
+                numberOthers +
+                " with " +
+                amountOthers +
+                " naira airtime"
+            );
+            if (rechargeConfirm == true) {
+              alert("Recharge Successful");
+            } else {
+              alert("Thank you for using our Bank USSD Service");
+            }
+          } else {
+            alert("Input a valid amonut");
+          }
+        } else if (transactions == 3 && typeof transactions == "number") {
+          var mobileNetwork = prompt(`
+          Choose the network
+          1. MTN
+          2. Airtel
+          3. Glo
+          4. 9Mobile
+          `);
+          var dataAmt = prompt(`
+          Choose the data type
+          1. 1gb for N600
+          2. 2gb for N1200
+          3. 6gb for N5000
+          4. 20gb for N10,000
+          `);
+          var receipent = prompt("Recepient's Number");
+          var pin = prompt("please input your 4 digit passcode");
+          mobileNetwork = Number(mobileNetwork);
+          dataAmt = Number(dataAmt);
+          receipent = Number(receipent);
+
+          if (
+            typeof amountOthers == "number" &&
+            typeof numberOthers == "number" &&
+            typeof receipent == "number" &&
+            mobileNetwork > 0 &&
+            mobileNetwork <= 4 &&
+            dataAmt > 0 &&
+            dataAmt <= 4
+          ) {
+            var dataConfirm = confirm(
+              "will you like to recharge " + receipent + " with data?"
+            );
+            if (dataConfirm == true) {
+              alert("Data Successful");
+            } else {
+              alert("Thank you for using our Bank USSD Service");
+            }
+          } else {
+            alert("Invaild Input");
+          }
+        } else if (transactions == 4 && typeof transactions == "number") {
+          var accountNum = prompt("please enter recepient Account Number");
+          var Bank = prompt(`
+          Choose the bank
+          1. Access Bank
+          2. GTB
+          3. Fidelity
+          4. First Bank
+          `);
+
+          accountNum = Number(accountNum);
+          Bank = Number(Bank);
+          if (Bank > 0 && Bank <= 4) {
+            var amountTransfer = prompt("Amount: ");
+            var pin = prompt("please input your 4 digit passcode");
+
+            amountTransfer = Number(amountTransfer);
+            pin = Number(pin);
+
+            if (
+              typeof accountNum == "number" &&
+              typeof Bank == "number" &&
+              typeof amountTransfer == "number"
+            ) {
+              var transferConfirm = confirm(
+                "will you like to send " +
+                  amountTransfer +
+                  " naira to" +
+                  accountNum
+              );
+              if (transferConfirm == true) {
+                alert("Transfer Successful");
+              } else {
+                alert("Thank you for using our Bank USSD Service");
+              }
+            } else {
+              alert("Transaction Failed; Please Retry");
+            }
+          } else {
+            alert("Wrong Input; Transaction Failed; Please Retry");
+          }
+        }
+      } else {
+        alert("Thank you for using our Bank USSD Service");
+      }
+    </script>
+  </body>
+</html>
