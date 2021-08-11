@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Day2_Assignment</title>
+</head>
+<body>
+    
+    <script>
+        
+      var ussd_code = Number(prompt("Enter USSD Code\n * the code is 996"));
+      
+       if(!Number.isNaN(ussd_code)){
+           // verify the code befor proceeding
+           if (ussd_code === 996) {
+               
+        var x = Number(prompt("Welcome to Eazybanking by Zenith \n1.Airtime Self  \n2.Airtime Other \n3.Data  \n4.Transfer"));
+        if (x === 1) {
+
+          y = prompt("Enter Amounts");
+          alert("you recharge" + " " + "N"+ y);
+            
+        }
+        else if (x === 2) {
+           z = Number(prompt("Enter user Number"))
+           if (!Number.isNaN(z)) {
+               var amount = prompt("Enter Amount");
+               confirm("You sent " +" "+ "N" + amount + " to " + z);
+            //    alert();
+           }
+        }
+        else if (x === 3) {
+           data_three = Number(prompt("Buy Your Data at: \n1. 50mb = N100 weekly \n2. 100mb = N300 weekly \n3. 1GB = N1000 monthly"))
+           // check and validate the user selection
+           if (!Number.isNaN(data_three)) {
+               if (data_three === 1) {
+                var password = Number(prompt("Enter Password"));
+                confirm("You have bought 50mb data"); 
+               }
+               else if(data_three === 2){
+                var password = Number(prompt("Enter Password"));
+                confirm("You have bought 100mb data");
+               }
+               else if(data_three === 3){
+                var password = Number(prompt("Enter Password"));
+                confirm("You have bought 1GB data");
+               }
+               else{
+                   confirm("you made a wrong seletion")
+               }
+               
+               
+           }
+        }
+        else if (x === 4) {
+           transfer = Number(prompt("Enter Account Number"))
+           if (!Number.isNaN(transfer)) {
+                     var amount = prompt("Enter Amount");
+                     var password = Number(prompt("Enter Password"));
+                    confirm("You Transfer" + " " + "N" + amount + " " + " to " + transfer); 
+           }
+           else{
+                   confirm("you made a wrong seletion")
+               }
+        }
+         else {
+            confirm("this is not a valid number");
+        }
+    
+       
+    }
+       else{
+        alert("Invalid Code");
+       }
+    }
+    else{
+        alert("Enter a number");
+       }
+
+    
+   
+
+    </script>
+</body>
+</html>
