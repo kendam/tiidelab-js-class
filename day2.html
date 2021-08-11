@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // collecting input from user using prompt
+       var name = prompt('What is your name')
+      // alert('your name is ' + name)
+      // alert(`your name is ${name}`)
+      // var age = prompt('What is your age')
+      // alert(typeof(age))
+      // age = Number(age) // convert to number
+      // alert(typeof(age))
+
+      // connditional statement
+      /* if statement
+      if else statement
+      else if statement
+      switch statement */
+
+      // if statement
+      /* if(condition){
+          action
+      } */
+
+      /* if(5 <= age){
+        alert('just testing if statemnt');
+      }
+      else if(){
+        alert('wrong')
+      }
+      else(){
+
+      } */
+      // var name = prompt('What is your name')
+      // var confirmation = confirm('Are you sure')
+
+      // if (confirmation == true){
+      //   alert('yaay!!..your name is Marwan')
+      // }
+      // else{
+      //   alert('fuck off')
+      // }//
+
+      var yourOption,
+          yourOption2,
+          yourOption3,
+          amount,
+          thirdPartyNumber,
+          confirmation,
+          pin,
+          accountNum,
+          bankName
+
+      yourOption = Number(prompt('Welcome to USSD Banking. \nPlease note that a #6.98 network charge will be \napplied to your bank account for banking services on \nthis channel \n1.Proceed \n2.Cancel'));
+
+      if (yourOption == 1){
+        yourOption2 = Number(prompt('1.Airtime-self\n2.Airtime-Others \n3.Data\n4.Trsf-GTB\n5.Trsf-Others'));
+        
+        if (yourOption2 == 1){
+          
+          alert('Recharge Sucessful');
+        }
+
+        else if (yourOption2 == 2){
+          thirdPartyNumber = Number(prompt('Please enter 3rd party mobile number'));
+          amount = Number(prompt('Please enter amount:'));
+          pin = Number(prompt('Please enter your pin:'));
+          confirmation = confirm(`Will you like recharge #${amount} to ${thirdPartyNumber}`);
+          if (confirmation == true){
+            alert('Recharge Sucessful');
+          }
+          else{
+            alert('Null');
+          }
+        }
+
+        else if (yourOption2 === 3) { 
+          yourOption3 = Number(prompt('Purchase Data for: \n1. Self \n2. 3rd Party'));
+          if (yourOption3 == 1) {
+            amount = Number(prompt('Please enter amount:'));
+            alert('Recharge Sucessful');
+          }
+          else if (yourOption3 == 2){
+            alert('Null');
+          }
+          else {
+            alert('Null');
+          }
+        }
+
+        else if (yourOption2 == 4){
+          amount = Number(prompt('Please enter amount:'));
+          accountNum = Number(prompt("Enter recipient's  account number or surname"))
+          pin = Number(prompt('Please enter your pin:'));
+          confirmation = confirm(`Are you sure you want to tranfer #${amount} to ${accountNum}`);
+          if (confirmation == true){
+            alert('Transfer Sucessful');
+          }
+          else{
+            alert('Null');
+          }
+        }
+
+        else if (yourOption2 == 5){
+          amount = Number(prompt('Please enter amount:'));
+          accountNum = Number(prompt("Enter recipient's account number"));
+          bankName = prompt('1. Zenith \n2. UBA\n3. Kuda\n4. Diamond');
+          pin = Number(prompt('Please enter your pin:'));
+          confirmation = confirm(`Are you sure you want to tranfer #${amount} to ${accountNum}`);
+          if (confirmation == true){
+            alert('Transfer Sucessful');
+          }
+          else{
+            alert('Null');
+          }
+        }
+      }
+
+      else{
+        alert('Cancelled');
+      }
+    </script>
+  </body>
+</html>
