@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank USSD</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        var confirmation = confirm("Welcome to GTBank 737 services. Would you like to proceed")
+        if (confirmation == true) {
+            alert("Kindly reply \n 1. Airtime-self \n 2. Airtime-Others \n 3. Data \n 4. Transfer")
+
+            var service = Number(prompt("Enter the number of the service you want to perform"))
+            if (service == 1 && !Number.isNaN(service)) {
+                var number = Number(prompt("Please enter the amount"))
+                var pin = Number(prompt("Enter pin"))
+            } else if (service == 2 && !Number.isNaN(service)) {
+                Number(prompt("Please enter 3rd party mobile number"))
+                Number(prompt("Please enter the amount"))
+                Number(prompt("Enter pin"))
+            } else if (service == 3 && !Number.isNaN(service)) {
+                Number(prompt("Please enter mobile number"))
+                Number(prompt("Please enter the amount"))
+                Number(prompt("Enter pin"))
+            } else if (service == 4 && !Number.isNaN(service)) {
+                Number(prompt("Please enter mobile number"))
+                Number(prompt("Please enter the amount"))
+                Number(prompt("Enter pin"))
+            } else {
+                alert("wrong input! try again")
+            }
+        }
+
+    </script>
+</body>
+
+</html>
