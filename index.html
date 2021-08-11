@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Olatunde USSD</title>
+  </head>
+
+  <body>
+    <script>
+    // USSD APP
+    var name = prompt(`
+    Welcome to Olatunde's Banking USSD ${name},
+    Enter your name to Login`
+    );
+    var amount, pin, confirmation, your_option;
+    your_option = Number(prompt(`
+    Welcome ${name},
+    What would you like to do?
+    1. Airtime Self
+    2. Airtime Others
+    3. Data
+    4. Transfer`));
+    // Airtime self option
+    if (your_option == 1) {
+        var Airtime_self = Number(prompt('Enter amount:'))
+        alert(`Your #${Airtime_self} recharge was successful.`)
+    }
+    // Airtime others section
+    else if (your_option == 2) {
+        var Airtime_others = prompt("Please Enter 3rd party mobile number")
+        amount = Number(prompt("Please enter amount:"))
+        pin = prompt('Please enter your pin')
+        confirmation = confirm(`Are you sure you want to recharge #${amount} to this number: ${Airtime_others}`)
+        if (confirmation == true) {
+              alert(`You've successfully recharge #${amount} for ${Airtime_others}, thanks for using this service.`)
+        }
+    }
+    // Data subscription section
+    else if (your_option == 3) {
+        let option_data = Number(prompt(`
+        Purchase data for:
+        1. Self
+        2. 3rd Party`))
+        // Data subscription for self
+        if (option_data == 1) {
+            var Data = prompt(`
+            Select your Bundle
+            1. 100MB 1day #100
+            2. 350MB 7days #300
+            3. 750MB 14days #500
+            4. 1GB 1day #300
+            5. 1.5GB 30days #1000`)
+            alert("Transaction successful")
+            }
+        //Data subscription for others
+        else {
+            let ask = prompt("Please Enter 3rd party mobile number ")
+            Data = prompt(`
+            Select your Bundle
+            1. 100MB 1day #100
+            2. 350MB 7days #300
+            3. 750MB 14days #500
+            4. 1GB 1day #300
+            5. 1.5GB 30days #1000`)
+            alert("Transaction successful")
+        }
+    }
+    // Transfer section
+    else {
+        amount = Number(prompt("Please enter amount:"));
+        let accNumber = prompt(`Enter receipt's Account no or phone no or surname `);
+        pin = prompt('Please enter your pin');
+        confirmation = confirm(`Are you sure you want to transfer #${amount} to this account no: ${accNumber}`);
+        alert(`Transaction successful`);
+    }
+    </script>
+  </body>
+</html>
