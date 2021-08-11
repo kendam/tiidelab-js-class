@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Demo</title>
+  </head>
+  <body>
+    <script>
+      
+      // Getting User's Input
+      var ussd = prompt(
+        "Welcome to Demo USSD. Enter  \n 1. for Airtime-self \n 2. for Airtime-Others \n 3. for Data \n 4. for Transfer"
+      );
+
+      // converting User's Input into number
+      ussd = Number(ussd);
+
+      // Conditional statements depending on User chooice
+
+      if (ussd == 1) {
+        var airtimeSelf = prompt("Please Enter the Amount");
+
+        alert(`You have been credited the amount of ${airtimeSelf} Naira`);
+      } 
+      else if (ussd == 2) {
+        var pinNum = prompt("Please enter your PIN");
+
+        var phoneNum = prompt("Enter destination Phone Number");
+
+        var confirmationAirtimeOthers = confirm(`Are you sure this is the ${phoneNum} ?`);
+
+        var amountOfAirtimeOthers = prompt("Please enter the Amount");
+
+        alert(`You have successfully bought ${amountOfAirtimeOthers} Naira for ${phoneNum}`);
+      } 
+      else if (ussd == 3) {
+        var data = prompt(
+          "Select a data plan \n 1. 750mb for N500 \n 2. 2gb for N1000 \n 3. 5gb for N3000 \n 4. 10gb for N5000"
+        );
+
+        // converting User's Input to buy data to number
+        data = +data;
+
+        // nested conditional statement for the user's Input to buy data
+
+        if (data == 1) {
+          alert("You have been credited with 750mb");
+        } 
+        else if (data == 2) {
+          alert("You have been credited with 2gb");
+        } 
+        else if (data == 3) {
+          alert("You have been credited with 5gb");
+        } 
+        else if (data == 4) {
+          alert("You have been credited with 10gb");
+        }
+        else {
+          alert("Input value from 1-4");
+        }
+      } 
+      else if (ussd == 4) {
+        var transferAmount = prompt("Please enter amount");
+
+        var accoutNum = prompt("Enter the destination account");
+
+        var verifyPinNum = prompt("Enter your Pin number");
+        
+        alert(`You have successfully transferred ${transferAmount} to ${accoutNum}`);
+      } 
+      else {
+          alert ("Input correct Value for Transaction")
+      }
+    
+    </script>
+  </body>
+</html>
