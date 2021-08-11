@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USSD Service</title>
+</head>
+<style>
+    .main {
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        min-height: 100vh;
+        font-size: 40px;
+    }
+</style>
+<body>
+    <div class="main">
+        Green USSD Services
+    </div>
+
+    <script>
+        alert("Welcome to Green Bank USSD Service")
+
+        var service = prompt("Kindly enter your input:\n1. Airtime-self\n2. Airtime-others\n3. Data\n4. Transfer") // command number assigned to variable service
+
+        if (service == 1) { // if service is 1, run the code in this block
+            var amount = prompt("Enter amount")
+
+            if (amount < 50) { // if amount is less than 50 alert error
+                alert('You can only recharge with amount from N50 and above')
+            } else if (amount > 5000) { // else if the amount is greater than 5000 alert error
+                alert('You can only recharge with amount below N5000')
+            } else { // if amount is between 50 and 5000, run the code in this block
+                confirm(`Are you sure you want to recharge your number with N${amount}`) // user confirms their action
+
+                pin = prompt("Enter your four digit pin [ for testing use 0000 ]")
+
+                if(pin.length != 4) { // if length of pin is not 4
+                    alert("Your pin should be four digit")
+                } else if (pin != 0000) { // if length of pin is 4 but user refused to use the mock pin provided
+                    alert("Wrong pin!")
+                } else { // if the user entered the correct pin
+                    alert(`You've successfully recharge your number with N${amount}`)
+                }
+            }
+        } else if (service == 2) { // if service is 2, run the code in this block
+            var phone = prompt("Enter phone number [starting with 0 or 234]")
+            
+            /* if phone number doesn't start with 234 or 0 and the length is not 13 and 11 respectively, alert error */
+            if ((phone.substring(0,3) !== '234' || phone.length !== 13) && (phone.substring(0,1) !== '0' || phone.length !== 11)) {
+                alert("Enter the correct phone number")
+            } else { // if phone number meet specification run this block of code
+                amount = prompt("Enter amount")
+                if (amount < 50) { // if amount is less than 50 alert error
+                    alert('You can only recharge with amount from N50 and above')
+                } else if (amount > 5000) { // else if the amount is greater than 5000 alert error
+                    alert('You can only recharge with amount below N5000')
+                } else { // if amount is between 50 and 5000, run the code in this block
+                    confirm(`Are you sure you want to recharge ${phone} with N${amount}`) // user confirms their action
+
+                    pin = prompt("Enter your four digit pin [ for testing use 0000 ]")
+
+                    if(pin.length != 4) {
+                        alert("Your pin should be four digit")
+                    } else if (pin != 0000) {
+                        alert("Wrong pin!")
+                    } else {
+                        alert(`You've successfully recharged ${phone} with N${amount}`)
+                    }
+                }
+            }
+        } else if (service == 3) {
+            var networkProvider = prompt('Enter your network provider [kindly use any of the network listed below]:\nMTN\nGlo\nAirtel\nEtisalat\nSmile\nSpectranet')
+
+            //array of banks
+            var networks = ['mtn', 'glo', 'airtel', 'etisalat', 'smile', 'spectranet']
+
+            // i looped through the array using map()
+            let networkAvailable = networks.map(network => network)
+            if(!networkAvailable.includes(networkProvider.toLowerCase())) {
+                alert('Input the networks provided!');
+            } else {
+                let amount = prompt(`Choose the amount of data [kindly use any of the list below]:
+                    1. 750MB - N500
+                    2. 1.2B - N1000
+                    3. 4GB - N2000
+                `) // command number assigned to data service
+
+                if (amount == 1) {
+                    confirm('Are you sure you want to suscribed to 750MB and charged N500') // user confirms their action
+                    let pin = prompt("Enter your four digit pin [ for testing use 0000 ]") // enter the pin to validate transaction
+
+                    if(pin.length != 4) { // if length of pin is not 4
+                        alert("Your pin should be four digit")
+                    } else if (pin != 0000) { // if length of pin is 4 but user refused to use the mock pin provided
+                        alert("Wrong pin!")
+                    } else { // if the user entered the correct pin
+                        alert('Congratulation, you\'ve suscribed to daily 750MB and charged N500')
+                    }
+                } else if (amount == 2) {
+                    confirm('Are you sure you want to suscribed to daily 1.2GB and charged N1000') // user confirms their action
+                    let pin = prompt("Enter your four digit pin [ for testing use 0000 ]") // enter the pin to validate transaction
+
+                    if(pin.length != 4) { // if length of pin is not 4
+                        alert("Your pin should be four digit")
+                    } else if (pin != 0000) { // if length of pin is 4 but user refused to use the mock pin provided
+                        alert("Wrong pin!")
+                    } else { // if the user entered the correct pin
+                        alert('Congratulation, you\'ve suscribed to daily 1.2GB and charged N1000')
+                    }
+                } else if (amount == 3) {
+                    confirm('Are you sure you want to suscribed to 4GB and charged N2000') // user confirms their action
+                    let pin = prompt("Enter your four digit pin [ for testing use 0000 ]") // enter the pin to validate transaction
+                    if(pin.length != 4) { // if length of pin is not 4
+                        alert("Your pin should be four digit")
+                    } else if (pin != 0000) { // if length of pin is 4 but user refused to use the mock pin provided
+                        alert("Wrong pin!")
+                    } else { // if the user entered the correct pin
+                        alert('Congratulation, you\'ve suscribed to daily 4GB and charged N2000')
+                    }
+                }
+            }
+        } else if (service == 4) {  // if service is 4, run the code in this block
+            var bankName = prompt('Enter your bank name [kindly use any of the bank listed below]:\nFirst Bank\nAccess Bank\nZenith Bank\nGuaranty Trust Bank\nFCMB\nFidelity Bank\nUBA')
+
+            //array of banks
+            var banks = ['first bank', 'access bank', 'zenith bank', 'keystone bank', 'guaranty trust bank', 'fcmb', 'kuda bank', 'wema bank', 'polaris bank', 'fidelity bank', 'uba']
+
+            // i looped through the array using map()
+            let bankAvailable = banks.map(bank => bank)
+
+            if(!bankAvailable.includes(bankName.toLowerCase())) {
+                alert('Use the banks provided!');
+            } else {
+                var accountNumber = prompt('Enter the account number')
+
+                if(accountNumber.length != 11) {
+                    alert('The account Number is wrong!')
+                } else {
+                    confirm(`The account holder is Abiodun Awoyemi\nPress OK to continue`)
+
+                    let amount = prompt('Enter the amount')
+
+                    if (amount < 100 || amount > 500000) {
+                        alert('You can only make a transfer between N100 and N5000000')
+                    } else {
+                        let pin = prompt('Enter the four digit pin [ for testing use 0000 ]')
+
+                        if(pin.length != 4) {
+                            alert("Your pin should be four digit")
+                        } else if (pin != 0000) {
+                            alert("Wrong pin!")
+                        } else {
+                            alert(`You've successfully transferred N${amount} to ${accountNumber}-Abiodun Awoyemi`)
+                        }
+                    }
+                }
+            }
+        } else {
+            alert('Input is not valid!')
+        }
+    </script>
+</body>
+</html>
