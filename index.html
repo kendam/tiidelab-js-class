@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
+  <body>
+    <script>
+    var airtimeSelf = 1;
+    var airtimeOthers = 2;
+    var Data = 3;
+    var Transfer = 4;
+    var success = "your request has been sent";
+    
+    var GT = alert(" Welcome to USSD Banking, please note that a service fee of #6.98 will be applied to your bank for this transaction")
+    var confirmation = confirm(" Do you want to proceed?")
+    if(confirmation == true){
+      var options = Number(prompt(`
+      1. Airtime-Self
+      2. Airtime-Others
+      3. Data
+      4. Transfer-GTB
+      5. Transfer-Others
+     `))
+      //Airtime-Self
+    if(options == 1){
+      var amount = Number(prompt(" please enter amount"));
+      alert(success);
+    }
+    
+    //Airtime-Others
+    else if(options == 2){
+      var others = Number(prompt(" please enter third party number"))
+      if(others !== isNaN){
+        prompt("please enter a valid number")
+      }
+        var amount = Number(prompt(" please enter amount"))
+        var pin = Number(prompt(` enter your 737 pin to top up ${others} with #${amount}`))
+      alert(success);
+    }
+    
+    //Data
+    else if(options == 3){
+      var dataOptions = Number(prompt(` Purchase Data for
+      1. self
+      2. others
+        `))
+        //Data for self
+      if(dataOptions == 1){
+        var moreOptions = Number(prompt(`   Select Bundle
+          1. 105MB 1day #100
+          2. 350MB 2day #200
+          3. 1.05GB 14days #500
+          4. 2.05GB 30days #1000
+          `))
+          alert(success);
+      }
+          //Data for others
+      else if(dataOptions == 2){
+        var others = Number(prompt(" please enter third party number"))
+        var moreOptions = Number(prompt(`   Select Bundle
+          1. 105MB 1day #100
+          2. 350MB 2day #200
+          3. 1.05GB 14days #500
+          4. 2.05GB 30days #1000
+          `))
+        var pin = Number(prompt(` enter your 737 pin to confirm this transaction`))
+          alert(success);
+      }
+       else{
+         alert("option does not exist")
+      }
+    }
+    
+    //Transfer-GTB
+    else if(options == 4){
+      var amount = Number(prompt(" please enter amount"));
+      var accountNumber = Number(prompt(" enter recipients account number"))
+      var pin = Number(prompt(`
+       enter your 737 pin to confirm transfer of #${amount} to ${accountNumber}`))
+        alert(success)
+    }
+    
+    //Transfer-Others
+    else if(options == 5){
+      var amount = Number(prompt(" please enter amount"));
+      var accountNumber = Number(prompt(" enter recipients account number"))
+      var bankPrompt = Number(prompt(` Please enter
+
+       1. First Bank
+       2. Access (Diamond)
+       3. Access
+       4. Zenith
+       5. Guaranty Trust Bank(GTB)
+       `))
+       var pin = Number(prompt(` enter your 737 pin to confirm transfer of #${amount} to ${accountNumber}`))
+       alert(success);
+    }
+    }
+    </script>
+    </body>
+    </html>
+    
+  
