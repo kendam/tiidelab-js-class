@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      var name = prompt("Enter your name?");
+   alert("your name is" + name)
+     alert(`Welcome to USSD Banking ${name} Please\n note that a 6.98 charges will be apply\nto this services.`)
+     var option = prompt(" Will you like to continue?\n1.Accept\n2.Reject")
+     var option2 = prompt(".Please select option\n 1.Airtime-self\n2. Airtime-others\n3. Data\n4.Transfer")
+     var Airtime_self, Airtime_others, Data, Transfer, Amount, Pin, confirmation;
+     var option2 = Number(option2);
+    //  alert(typeof(option2))
+
+     if (option2 == 1)
+    {
+        prompt("enter your number")
+        prompt("enter pin")
+    alert("congratulations, your transaction is successful.")
+    }
+
+
+else if (option2 == 2)
+
+
+{
+    Airtime_others = Number(prompt("enter third part number"))
+    amount = Number(prompt("please enter amount"))
+   Pin = Number(prompt("enter your pin"))
+   confirmation = confirm(`are you sure you want to recharge ${amount} to this number: ${Airtime_others}`)
+    alert("successful, your account has been credited")
+}
+    else if (option2 == 3)
+    {
+        Data = (prompt("select your network\n1.mtn\n2.glo\n3.airtel"))
+        prompt("enter your number")
+        amount =Number(prompt("enter the data amount"))
+        Pin = Number(prompt("enter your pin"))
+        confirmation = confirm("are you sure you want to subscribed data to this number?")
+    alert(" your data subscription is successful")
+
+    }
+
+    else if (option2 == 4)
+    {
+        Transfer = Number(prompt(" please,enter the number you want to transfer to"))
+        prompt("enter the amount")
+        prompt("enter you pin")
+        confirmation = confirm("are you sure you want to continue this transaction?")
+    alert("  Congrats! your Airtime Transfer is successful")
+
+  }
+
+  else
+    {
+        alert("please, enter a valid number")
+
+    }
+    // alert("please, input a valid number")
+  
+  
+
+  
+
+
+    </script>
+</body>
+</html>
