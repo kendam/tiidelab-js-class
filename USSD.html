@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var GT = prompt(`
+        1. Airtime self
+        2. Airtime Others
+        3. Data
+        4. Transfer-GTB`); 
+
+        if (GT == 1 ){
+            var amount = prompt("Please Enter Amount")
+            amount = Number(amount) //conversion
+            if (amount === NaN){
+                prompt("Please enter a number")
+            }
+            else{
+                
+                var confirmation = confirm(`Transfer  ${amount} to +2347062354189`)
+                if (confirmation == true){
+                alert(`you have sucessfully transferred ${amount} to +2347062354189. Thanks for using this service. `)
+                }else{
+                alert("oops, try later!")
+                }
+            }
+            
+            
+        }
+        else if (GT ==2 ){
+            var numb = prompt("Please Enter 3rd Party mobile Number")
+            var amt = prompt("Please Enter Amount")
+            amt = Number(amt)
+            var confirmer = confirm(`Transfer ${amt} to ${numb}`)
+            if (confirmer == true){
+                alert(`you have sucessfully transferred ${amt} to ${numb}. Thanks for using this service. `)
+            }
+            else{
+                alert("oops, try later!")
+            }
+
+        }
+        else if (GT==3){
+            var Data = prompt(`Purchase Data for:
+            1. Self
+            2. 3rd Party`)
+            if (Data == 1 ){
+                var Self = prompt(`Select a data option:
+                1. 100 for 100MB
+                2. 200 for 200MB
+                3. 500 for 500MB`)
+                if (Self == 1){
+                    alert(`you have sucessfully purchased 100MB. Thanks for using this service, you would receive a message shortly`)
+                } else if(Self == 2){
+                    alert(`you have sucessfully purchased 200MB. Thanks for using this service, you would receive a message shortly`)
+                }
+                else if(Self == 3){
+                    alert(`you have sucessfully purchased 500MB. Thanks for using this service, you would receive a message shortly`)
+
+                }
+            }
+            else if (Data == 2){
+                var TrdParty = prompt(`Please Enter 3rd Party mobile Number`)
+                TrdParty = Number(TrdParty)
+                var TrdPartyCred = prompt(`Select one of the following:
+                 1. 100 for 100MB
+                 2. 200 for 200MB
+                 3. 500 for 500MB`)
+                if  ( TrdPartyCred == 1){
+                    alert(`you have sucessfully transferred 100MB to +234${TrdParty}. Thanks for using this service `)
+                }
+                else if (TrdPartyCred == 2){
+                    alert(`you have sucessfully transferred 200MB to +234${TrdParty}. Thanks for using this service `)   
+                }
+                else if ( TrdPartyCred == 3){
+                    alert(`you have sucessfully transferred 500MB to +234${TrdParty}. Thanks for using this service `)
+                }
+            
+
+            }
+        }
+        else if(GT==4){
+            var GTb = prompt("Enter GT Bank Account Number")
+            GTb = Number(GTb)
+            var Trnsf = prompt(`Enter amount to be Transfered`)
+            Trnsf = Number(Trnsf)
+            var consf = confirm(`Transfer ${Trnsf} to 0${GTb}`)
+            if (consf == true){
+                alert(`you have succesfully transfered ${Trnsf} to 0${GTb} `)
+            }
+            else{
+                alert(`Insufficient funds.`)
+            }
+
+        }
+
+
+        
+        // var name = prompt("Enter your name")
+        // // // alert("Your name is "+ name)
+        // // alert(`You said your name is ${name}`)
+        // var age = prompt("Enter your age")
+        // // alert(typeof(age)) // prompt always receives input as a string
+        // age = Number(age) // convert age from a string to a number
+        // // alert(typeof(age))
+
+        // /* conditional statements
+        // 1. If
+        // 2. If else
+
+        // */
+
+        // If (age > 18){
+        //     alert ("Proceed to next stage")
+        // }
+        // else if (age == 17){
+        //     alert ("wait one more year")
+        // }
+
+        // /* *737#
+
+        // 1. Airtime-self
+        // 2. Airtime- Others
+        // 3. Data
+        // 4. Others */
+
+        // var AirtimeSelf = 1;
+        // var AirtimeOthers = 2;
+        // var Data = 3;
+        // var Others = 4;
+
+
+        // var GT = alert("  
+        // 1. Airtime-self
+        // 2. Airtime Others
+        // 3. Data
+        // 4. Others ) 
+        // prom
+
+        // // }
+
+        // var name = prompt("Enter your name");
+        // var score = prompt("Enter your score");
+        // var confirmation = confirm("Are the above details correct?")
+        // if (confirmation == true){
+        //     alert(`your name is ${name}` + ` and your score is ${score} !`)
+        // }
+        // else{
+        //     alert("Enter the correct details")
+        // }
+        
+        // // var score = prompt("Enter your score");
+
+        // if (name == "Bells" && score >= 70 ) {
+        //     alert("Welcome to Tiidelab Fellowship Mr Bells! ")
+        // } else if( name == "Bells" && score == 69 ) {
+        //     alert("You have done well, we would get back to you")
+        // } else{
+        //     alert("Try again next year")
+        // }
+            
+
+    </script>
+    
+</body>
+</html>
