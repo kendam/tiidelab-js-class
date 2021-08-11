@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  
+    // Assignment
+  // Bank USSD
+  
+
+
+    
+    var rideOnOne = prompt("Welcome to RideOnOne Bank. How can we help you today? Reply\nA for Airtime-Self\nB for Airtime-Others\nC for Data\nD for Transfer");
+    
+    // Process begins
+    if (rideOnOne === 'A') {
+      // Airtime-Self
+      let amount = Number(prompt("Enter amount"));
+      if (!Number.isNaN(amount)) {
+        var confirmation = confirm(`Are you sure you want to recharge #${amount}?`)
+        if (confirmation == true) {
+          alert("Recharge successful!");
+        }
+        else {
+          alert("Recharge unsuccessful!");
+        }
+      }
+      else {
+        alert("Invalid amount! Try again");
+      }
+    }
+    
+    else if (rideOnOne === 'B') {
+      // Airtime-Others
+      let benNumber = Number(prompt("Enter Beneficiary's phone number"));
+      if (!Number.isNaN(benNumber)) {
+        let amount = Number(prompt("Enter amount"));
+        if (!Number.isNaN(amount)) {
+          var confirmation = confirm(`Are you sure you want to recharge airtime of #${amount} for ${benNumber}?`);
+          if (confirmation == true) {
+            alert(`Recharge of #${amount} for ${benNumber} successful`);
+          }
+          else {
+            alert("Recharge unsuccessful");
+          }
+        }
+        else {
+          alert("Invalid amount!");
+        }
+      }
+      else {
+        alert("Invalid phone number!");
+      }
+    }
+
+    else if (rideOnOne === 'C') {
+      let amount = Number(prompt("Enter data amount"));
+      if (!Number.isNaN(amount)) {
+        var confirmation = confirm('Confirm data purchase');
+        if (confirmation == true) {
+          alert("Data purchase successful!");
+        }
+        else {
+          alert("Data purchase unsuccessful");
+        }
+      }
+      else {
+        alert("Invalid data amount. Try again");
+      }
+    }
+
+    else if (rideOnOne === 'D') {
+      let benNumber = Number(prompt("Enter Beneficiary's account number"));
+      if (!Number.isNaN(benNumber)) {
+        let amount = Number(prompt("Enter amount to be transferred"));
+        if (!Number.isNaN(amount)) {
+          var confirmation = confirm(`Confirm transfer of #${amount} to ${benNumber}`);
+          if (confirmation == true) {
+            alert(`Transfer of #${amount} to ${benNumber} successful`);
+          }
+          else {
+            alert("Transfer unsuccessful. Try again");
+          }
+        }
+        else {
+          alert("Invalid amount");
+        }
+      }
+      else {
+        alert("Invalid account number");
+      }
+    }
+  
+  else {
+    alert("Sorry, your reply is invalid");
+  }
+
+
+    
+
+
+
+  </script>
+</body>
+</html>
