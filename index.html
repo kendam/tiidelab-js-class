@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USSD</title>
+</head>
+<body>
+    <script>
+       let opt = prompt(`
+       1. Airtime-self 
+       2. Airtime-others 
+       3. Data 
+       4. Transfer`);
+
+       let option = Number(opt)
+
+       if (option === 1) {
+          prompt("Amount")
+          alert("Transaction successful")
+       } else if (option === 2) {
+          prompt("Input number") 
+          prompt("Input Amount")
+          alert("Transanction successful")
+       } else if (option === 3) {
+          prompt("Amount")
+          prompt("Input phone number")
+          alert("Successful")
+       } else if (option === 4) {
+          let bnk = prompt(`
+          Choose bank 
+          1. Gtbank 
+          2. First bank 
+          3. Accesss bank 
+          4. Eco bank`)
+
+          let bank = Number(bnk)
+           
+
+          if (bank === 1){
+            prompt("Input bank account")
+            prompt("Input amount")
+            alert("Transanction successful")
+          } else if (bank === 2) {
+            prompt("Input bank account")
+            prompt("Input amount")
+            alert("Transanction successful")
+          } else if (bank === 3) {
+            prompt("Input bank account")
+            prompt("Input amount")
+            alert("Transanction successful")
+          } else if (bank === 4) {
+            prompt("Input bank account")
+            prompt("Input amount")
+            alert("Transanction successful")
+          } else {
+            alert("Input a valid number")
+          }
+       } else {
+          alert("Input a valid number")
+       }
+    </script>
+</body>
+</html>
