@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank transaction</title>
+</head>
+<body>
+    <script>
+        var first_transfer_pin = `*894#`
+        // var transfer_fpin = `*739#`
+        // var transfer_fpin = `*286#`
+        // var transfer_fpin = `*543#`
+        var transfer_Pin, service_list_item
+        var welcome = prompt(`Kindly Select your Bank 
+                            1. First bank
+                            2. GTB
+                            3. Zenith
+                            3. FCMB
+                            4. Keystone
+                            5. UBA
+                            6. Access Bank`);
+        
+        if(Number(welcome == 1 )){
+            service_list_item = prompt(`Welcome to first bank your code for transaction is ${first_transfer_pin}
+                    1. Airtime_Self
+                    2. Airtime_Others
+                    3. Data_Self
+                    4. Data_Others
+                    5. Transfer`)
+
+        
+
+        if(Number(service_list_item == 1)){
+            amount = prompt("Enter amount")
+            
+            if(Number(amount >= 1 )){
+                transfer_Pin = prompt("Enter pin")
+                if(transfer_Pin === first_transfer_pin) {
+                    alert(`Transaction Successful,  ₦${amount}  is deducted from your accout`)
+                    
+         }
+         else{
+             alert("Incorrect pin")
+         }
+            }
+           
+            else{
+                if(amount != Number){
+                    alert("The value you entered is not valid")
+                }
+            }
+
+            // Airtime Others
+        }
+        // Airtime for other people Others
+        else if(Number(service_list_item == 2)){
+            amount = prompt("Enter amount")
+           
+            if(Number(amount >= 1 )){
+                var receipient = prompt("Enter recipient number")
+                if (Number(receipient != Number)){
+                    transfer_Pin = prompt("Enter pin")
+                    if(transfer_Pin === first_transfer_pin) {
+                    alert(`Transaction Successful,  ₦${amount}  is deducted from your accout`)
+                     }
+                     else{
+                         alert("Invalid pin")
+                     }
+                     
+                }
+                else{
+                    alert("You entered wrong value")
+                }
+                
+            }
+           
+            else{
+                if(amount != Number){
+                    alert("The value you entered is not valid")
+                }
+            }
+            
+        }
+        // Data
+    
+        else if(Number(service_list_item == 3)){
+             mb = prompt("Enter MB in number example 500")
+            if(Number(mb >=1)){
+                transfer_Pin = prompt("Enter your pin")
+                if(transfer_Pin === first_transfer_pin){
+                    alert(`Transaction Successful `)
+                }else{alert("Incorrect pin")}
+              
+            }else{alert("You entered wrong value")}
+
+
+            }
+        // Buy data for others 
+
+        else if(Number(service_list_item == 4)){
+            var mbo = prompt("Enter MB in number example 500")
+            if(Number(mbo >=1)){
+                var receiverNumber =prompt("Enter the recipient number")
+                if(Number(receiverNumber != Number)){
+                    transfer_Pin = prompt("Enter pin")
+                    if(transfer_Pin === first_transfer_pin){
+                        alert("Transfer Successful")
+                    }
+                    else{
+                        alert("Incorrect pin")
+                    }
+                }else{ alert("Wrong value")
+                   
+                }
+            }else{alert("Enter valid value, try again!")}
+        }
+        
+        // Transfer money to another account
+        else if(Number(service_list_item == 5)){
+            var bank = prompt(`Select Bank:
+                                1. First bank
+                                2. Zenith Bank
+                                3. Access Bank
+                                4. Union bank
+                                6. Keystone bank
+                                7. Heritage bank
+                                8. UBA
+                                9. GTB`)
+            if(bank !=""){
+                var receiverAccountNumber = prompt("Enter account number")
+                if(Number(receiverAccountNumber >=1)){
+                    var transferAmount = prompt("Enter Amount")
+                    if(Number(transferAmount != Number)){
+                        transfer_Pin = prompt("Enter pin")
+                        if(transfer_Pin === first_transfer_pin){
+                            alert(`Transfer successful.
+                                    You transfered ${transferAmount} to ${receiverAccountNumber}.
+                                    Thank you for banking with us `)
+                        }else{alert("Incorrect pin")}
+
+                    }else{
+                        alert("The amount you entered is not correct")
+                    }
+                }else{
+                    alert("Enter valid value, try again!")
+                }
+            }else {alert("Select destination bank")}
+            
+        }
+        
+    }
+
+// GTB Section
+var gtbTransferPin = `*373#`
+    if(Number(welcome == 2 )){
+        service_list_item = prompt(`Welcome to GTB, your code for transaction is ${gtbTransferPin}
+                    1. Airtime_Self
+                    2. Airtime_Others
+                    3. Data
+                    4. Data_Others
+                    5. Transfer to Others`)
+                    
+        if(Number(service_list_item == 1)){
+            amount = prompt("Enter amount")
+            
+            if(Number(amount >= 1 )){
+                transfer_Pin = prompt("Enter pin")
+                if(transfer_Pin === gtbTransferPin) {
+                    alert(`Transaction Successful,  ₦${amount}  is deducted from your accout`)
+                    
+         }
+         else{
+             alert("Incorrect pin")
+         }
+            }
+           
+            else{
+                if(amount != Number){
+                    alert("The value you entered is not valid")
+                }
+            }
+
+            // Airtime Others
+        }
+        // Airtime for other people Others
+        else if(Number(service_list_item == 2)){
+            amount = prompt("Enter amount")
+           
+            if(Number(amount >= 1 )){
+                var receipient = prompt("Enter recipient number")
+                if (Number(receipient != Number)){
+                    transfer_Pin = prompt("Enter pin")
+                    if(transfer_Pin === gtbTransferPin) {
+                    alert(`Transaction Successful,  ₦${amount}  is deducted from your accout`)
+                     }
+                     else{
+                         alert("Invalid pin")
+                     }
+                     
+                }
+                else{
+                    alert("You entered wrong value")
+                }
+                
+            }
+           
+            else{
+                if(amount != Number){
+                    alert("The value you entered is not valid")
+                }
+            }
+            
+        }
+        // Data
+    
+        else if(Number(service_list_item == 3)){
+             mb = prompt("Enter MB in number example 500")
+            if(Number(mb >=1)){
+                transfer_Pin = prompt("Enter your pin")
+                if(transfer_Pin === gtbTransferPin){
+                    alert(`Transaction Successful `)
+                }else{alert("Incorrect pin")}
+              
+            }else{alert("You entered wrong value")}
+
+
+            }
+        // Buy data for others 
+
+        else if(Number(service_list_item == 4)){
+            var mbo = prompt("Enter MB in number example 500")
+            if(Number(mbo >=1)){
+                var receiverNumber =prompt("Enter the recipient number")
+                if(Number(receiverNumber != Number)){
+                    transfer_Pin = prompt("Enter pin")
+                    if(transfer_Pin === gtbTransferPin){
+                        alert("Transfer Successful")
+                    }
+                    else{
+                        alert("Incorrect pin")
+                    }
+                }else{ alert("Wrong value")
+                   
+                }
+            }else{alert("Enter valid value, try again!")}
+        }
+        
+        // Transfer money to another account
+        else if(Number(service_list_item == 5)){
+            var bank = prompt(`Select Bank:
+                                1. First bank
+                                2. Zenith Bank
+                                3. Access Bank
+                                4. Union bank
+                                6. Keystone bank
+                                7. Heritage bank
+                                8. UBA
+                                9. GTB`)
+            if(bank !=""){
+                var receiverAccountNumber = prompt("Enter account number")
+                if(Number(receiverAccountNumber >=1)){
+                    var transferAmount = prompt("Enter Amount")
+                    if(Number(transferAmount != Number)){
+                        transfer_Pin = prompt("Enter pin")
+                        if(transfer_Pin === gtbTransferPin){
+                            alert(`Transfer successful.
+                                    You transfered ${transferAmount} to ${receiverAccountNumber}.
+                                    Thank you for banking with us `)
+                        }else{alert("Incorrect pin")}
+
+                    }else{
+                        alert("The amount you entered is not correct")
+                    }
+                }else{
+                    alert("Enter valid value, try again!")
+                }
+            }else {alert("Select destination bank")}
+            
+        }
+        
+    
+    }
+
+    // Zenith Bank Section
+
+    var zenithTransferPin = `*966#`
+    if(Number(welcome == 3 )){
+        service_list_item = prompt(`Welcome to Zenith Bank, your code for transaction is ${zenithTransferPin}
+                    1. Airtime_Self
+                    2. Airtime_Others
+                    3. Data
+                    4. Data_Others
+                    5. Transfer to Others`)
+                    
+        if(Number(service_list_item == 1)){
+            amount = prompt("Enter amount")
+            
+            if(Number(amount >= 1 )){
+                transfer_Pin = prompt("Enter pin")
+                if(transfer_Pin === zenithTransferPin) {
+                    alert(`Transaction Successful,  ₦${amount}  is deducted from your accout`)
+                    
+         }
+         else{
+             alert("Incorrect pin")
+         }
+            }
+           
+            else{
+                if(amount != Number){
+                    alert("The value you entered is not valid")
+                }
+            }
+
+            // Airtime Others
+        }
+        // Airtime for other people Others
+        else if(Number(service_list_item == 2)){
+            amount = prompt("Enter amount")
+           
+            if(Number(amount >= 1 )){
+                var receipient = prompt("Enter recipient number")
+                if (Number(receipient != Number)){
+                    transfer_Pin = prompt("Enter pin")
+                    if(transfer_Pin === zenithTransferPin) {
+                    alert(`Transaction Successful,  ₦${amount}  is deducted from your accout`)
+                     }
+                     else{
+                         alert("Invalid pin")
+                     }
+                     
+                }
+                else{
+                    alert("You entered wrong value")
+                }
+                
+            }
+           
+            else{
+                if(amount != Number){
+                    alert("The value you entered is not valid")
+                }
+            }
+            
+        }
+        // Data
+    
+        else if(Number(service_list_item == 3)){
+             mb = prompt("Enter MB in number example 500")
+            if(Number(mb >=1)){
+                transfer_Pin = prompt("Enter your pin")
+                if(transfer_Pin === zenithTransferPin){
+                    alert(`Transaction Successful `)
+                }else{alert("Incorrect pin")}
+              
+            }else{alert("You entered wrong value")}
+
+
+            }
+        // Buy data for others 
+
+        else if(Number(service_list_item == 4)){
+            var mbo = prompt("Enter MB in number example 500")
+            if(Number(mbo >=1)){
+                var receiverNumber =prompt("Enter the recipient number")
+                if(Number(receiverNumber != Number)){
+                    transfer_Pin = prompt("Enter pin")
+                    if(transfer_Pin === zenithTransferPin){
+                        alert("Transfer Successful")
+                    }
+                    else{
+                        alert("Incorrect pin")
+                    }
+                }else{ alert("Wrong value")
+                   
+                }
+            }else{alert("Enter valid value, try again!")}
+        }
+        
+        // Transfer money to another account
+        else if(Number(service_list_item == 5)){
+            var bank = prompt(`Select Bank:
+                                1. First bank
+                                2. Zenith Bank
+                                3. Access Bank
+                                4. Union bank
+                                6. Keystone bank
+                                7. Heritage bank
+                                8. UBA
+                                9. GTB`)
+            if(bank !=""){
+                var receiverAccountNumber = prompt("Enter account number")
+                if(Number(receiverAccountNumber >=1)){
+                    var transferAmount = prompt("Enter Amount")
+                    if(Number(transferAmount != Number)){
+                        transfer_Pin = prompt("Enter pin")
+                        if(transfer_Pin === zenithTransferPin){
+                            alert(`Transfer successful.
+                                    You transfered ${transferAmount} to ${receiverAccountNumber}.
+                                    Thank you for banking with us `)
+                        }else{alert("Incorrect pin")}
+
+                    }else{
+                        alert("The amount you entered is not correct")
+                    }
+                }else{
+                    alert("Enter valid value, try again!")
+                }
+            }else {alert("Select destination bank")}
+            
+        }
+        
+    
+    }
+
+    // if(Number(welcome == 4 || 5 || 6  )){
+    //     alert("Service is not available,  please contact customer care")
+    // }
+
+
+
+
+
+
+
+        
+    </script>
+</body>
+</html>
