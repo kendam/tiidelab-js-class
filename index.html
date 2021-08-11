@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>USSD Code Application</h1>
+
+
+
+
+
+
+  <script>
+ /*
+       Aim
+       Create A Web App That Handles USSD Transactions
+
+
+    ## Steps Taken To Create The USSD App
+    - Prompt The User To Select An Option Of The Services 
+    - Make Use Of Conditionals To Perform Transaction Depending On What The User Inputs
+   - Make Use Of Alerts And Prompts To Complete Transaction
+ */
+
+
+  // Getting The User's Input 
+ let numberSelected =   prompt("Please Select The Transaction To Perform \n 1.  Airtime-self \n 2. Airtime-Others \n 3. Buy Data \n 4. Transfer Data");
+
+  // Converting User's Input To A Number To Use The Conditional Statement
+ numberSelected = Number(numberSelected);
+
+  
+  // Conditionals Depending On What The User Selects
+  
+     if(numberSelected === 1){
+        const amount =   prompt("Please Enter The Amount");
+
+        alert(`You have been credited the amount of ${amount} Naira`);
+     }
+     else if(numberSelected === 2){
+       
+        const otherPhoneNumber = prompt("Enter Phone Number To Purchase For");
+
+        const amount2 = prompt("Select Amount To Purchase");
+
+        alert(`You Have Successfully Purchased ${amount2} Naira To Phone Number ${otherPhoneNumber}`);
+
+
+
+     }
+     else if(numberSelected === 3){
+
+        let dataSubscription =   prompt("Please Select A Plan \n 1.  N100 for 100mb \n 2. N500 for 400mb \n 3. N1000 for 2gb \n 4. N5000 for 10gb ");
+          
+        // We Could Further A Nested Loop Here But It Will Be Out Of Scope So We Just Alert A Data Purchased Message
+        
+
+        alert("You Have Successfully Purchased Data");
+
+
+     }
+     else if(numberSelected === 4){
+
+        const dataPhoneNumber = prompt("Enter Phone Number To Transfer Data ");
+
+        const amount3 = prompt("Select Amount Of Data To Send ");
+
+        alert(`You Have Successfully Transferred ${amount3} data To Phone Number ${dataPhoneNumber}`);
+
+
+     }
+     else{
+         alert("Input Not Valid");
+     }
+
+  
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
