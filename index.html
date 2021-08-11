@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACCESS BANK </title>
+</head>
+<body style="background-image:url(background.jpg); background-size: cover; background-repeat: no-repeat;">
+    
+<h1 style="text-align: center; color: #fff;">ACCESS BANK USSD </h1>
+    
+<script>
+
+var name= prompt('Please Enter Your Name:')
+    pin=1208
+    check_balance= 1
+    transfer=2
+    airtime=3
+    other_service=4
+    account_one=5
+    account_two=6
+    diamond_account=7
+
+
+    alert(`${name} Welcome!! Click Ok to continue.`)
+    var packages= prompt(`Kindly Choose The Transaction You Like To Perform. 1. Check Balance 2. Transfers 3. Airtime 4. Other Services`)
+
+    // For Balance Check 
+
+    if (packages == check_balance) {
+       var balance=prompt('Kindly Choose Account. 1. *******503 2. *******490')
+
+        if (balance == 1){
+            var display_balance= prompt('Please Enter Pin') 
+        }
+         if (display_balance == 1208) {
+            alert(name + 'Your Balance is ' + Math.random() * 100000)
+        }
+      }
+    // For Transfer 
+    else if(packages == transfer ){
+       var transfer_option= prompt('1. Diamond Account 2. Others')
+        
+       if ( transfer_option == 1){
+            prompt('Please Fill Account Number') 
+        }
+       else if ( transfer_option == 2){
+            prompt('Please Fill Account Number') 
+        }
+         
+    }
+
+    // For Airtime 
+
+    else if(packages == airtime){
+        var airtime_option= prompt('1.Recharge-Self 2.Recharge-Others')
+        
+        if ( airtime_option == 1){
+             prompt('Please Fill Phone Number') 
+             prompt('Enter Amount')
+             alert('Recharge Successful')
+         }
+        else if ( airtime_option == 2){
+             prompt('Please Fill Phone Number')
+             prompt('Enter Amount')
+             prompt('Enter Pin') 
+             alert('Recharge Successful')
+         }
+    }
+
+
+    else if(packages == other_service){
+        var other_services = prompt('1. Create Account 2. Customer Care')
+       
+        if ( other_services == 1){
+             prompt('Name') 
+            
+         }
+        else if ( other_services == 2){
+             prompt('Whats the problem')
+            
+         }
+    }
+
+   
+    // else if (packages == account_one || packages == account_two) {
+    //         prompt('Please Enter Pin') 
+    //     }
+
+    else if (pin == 1208) {
+            alert(`You have ${Math.random()}`)
+        }
+
+     else{
+        alert("Please Select a Package")
+        location.reload()
+    }
+   
+    
+
+
+</script>
+
+
+</body>
+</html>
