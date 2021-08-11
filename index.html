@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Vale Bank</title>
+  </head>
+  <body>
+    <script>
+      let input = prompt(`
+       Welcome to Vale Bank self-help service
+       What will you like to do
+       1. Airtime-self
+       2. Airtime-others
+       3. Data
+       4. Transfers
+       `);
+      input = Number(input);
+
+      if (input === 1) {
+        input = prompt(`Enter Amount: `);
+        let check = confirm(`Are you sure you want to recharge N${input}?`);
+        if (check) {
+          alert(`Recharge of ${input} successful`);
+        } else alert(`Try again`);
+      }
+
+      if (input === 2) {
+        let phoneNumber = prompt(`Enter Phone number you want to recharge`);
+        let network = prompt(`
+          Select a network
+          1. MTN
+          2. Airtel
+          3. Glo
+          4. 9mobile
+          `);
+        let amount = prompt(`Enter amount`);
+        let check = confirm(
+          `Are you sure you want to send N${amount} to ${phoneNumber}?`
+        );
+        if (check) {
+          alert(`Transaction successful`);
+        } else alert(`Try again`);
+      }
+
+      if (input === 3) {
+        let input = prompt(`
+          Choose a data plan
+          1. Daily Plans
+          2. Weekly Plans
+          3. Monthly Plans
+          `);
+        input = Number(input);
+        if (input === 1) {
+          let options = prompt(`
+              Daily Plans
+              1. 10MB for N100
+              2. 250MB for N200
+              3. 1.5GB for N500
+              `);
+        } else if (input === 2) {
+          let options = prompt(`
+              Weekly Plans
+              1. 750MB for N500
+              2. 2GB for N1,000
+              3. 6GB for N1,500
+              `);
+        } else if (input === 3) {
+          let options = prompt(`
+              Monthly Plans
+              1. 1.5GB for N1,000
+              2. 3GB for N2,000
+              3. 5GB for N3,000
+              `);
+        }
+        let check = confirm(`Are you sure to proceed with this transaction?`);
+        if (check) {
+          alert(`Transaction successful`);
+        } else alert(`Try again`);
+      }
+
+      if (input === 4) {
+        let accountNumber = prompt(`Enter destination account number`);
+        let bank = prompt(`
+          Choose bank
+          1. Access bank
+          2. First bank
+          3. Zenith bank
+          `);
+        let amount = prompt(`Enter the amount to transfer`);
+        let check = confirm(
+          `Are you sure you want to transfer N${amount} to ${accountNumber}?`
+        );
+        if (check) {
+          let input = prompt(`
+              Choose the account to transfer from
+              1. Savings
+              2. Current
+              `);
+          let pin = prompt(`Enter your pin`);
+          alert(`Transaction successful`);
+        } else alert(`Try again`);
+      }
+    </script>
+  </body>
+</html>
