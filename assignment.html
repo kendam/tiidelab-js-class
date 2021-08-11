@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+    // Abdulroqeeb Daramola Banking USSD APP
+    var name = prompt("what's is your name?");
+    alert(`
+    Welcome to the Banking USSD ${name},
+    Pls note that a charges of #6.98 applies for using this service`
+    );
+    var Airtime_self, Airtime_others, Data, Transfer_to_Gtb, Transfer_to_others, amount, pin, confirmation, bank_name;
+    var your_option = Number(prompt(`
+    What will you like to do:
+    1. Airtime_self
+    2. Airtime_others
+    3. Data
+    4. Transfer to GtB
+    5. Transfer to Others`));
+    // Airtime self option
+    if (your_option == 1) {
+        Airtime_self = Number(prompt('Enter amount:'))
+        alert(`Your #${Airtime_self} recharge has been successful, thanks for using this service.`)
+    }
+    // Airtime others section
+    else if (your_option == 2) {
+        Airtime_others = prompt("Please Enter 3rd party mobile number")
+        amount = Number(prompt("Please enter amount:"))
+        pin = prompt('Please enter your pin')
+        confirmation = confirm(`Are you sure you want to recharge #${amount} to this number: ${Airtime_others}`)
+        if (confirmation == true) {
+              alert(`You've successfully recharge #${amount} for ${Airtime_others}, thanks for using this service.`)
+        }
+    }
+    // Data subscription section
+    else if (your_option == 3) {
+        let option_data = Number(prompt(`
+        Purchase data for:
+        1. Self
+        2. 3rd Party`))
+        // Data subscription for self
+        if (option_data == 1) {
+            Data = prompt(`
+            Select your Bundle
+            1. 100MB 1day #100
+            2.350MB 7days #300
+            3. 750MB 14days #500
+            4. 1GB 1day #300
+            5. 1.5GB 30days #1000`)
+            alert("Transaction successful")
+            }
+        //Data subscription for others
+        else {
+            let ask = prompt("Please Enter 3rd party mobile number ")
+            Data = prompt(`
+            Select your Bundle
+            1. 100MB 1day #100
+            2.350MB 7days #300
+            3. 750MB 14days #500
+            4. 1GB 1day #300
+            5. 1.5GB 30days #1000`)
+            alert("Transaction successful")
+        }
+    }
+    // Transfer to GTBank users section
+    else if (your_option === 4) {
+        amount = Number(prompt("Please enter amount:"))
+        let enter = prompt(`Enter receipt's Account no or phone no or surname `)
+        pin = prompt('Please enter your pin')
+        confirmation = confirm(`Are you sure you want to transfer #${amount} to this account no: ${enter}`)
+        alert(`Transaction successful`)
+    }
+    // Transfer to other bank customers
+    else {
+        amount = Number(prompt("Please enter amount:"))
+        bank_name = prompt(`
+        1. Zenith Bank
+        2. UBA
+        3. First Bank
+        4. Access Bank
+        5. Ecobank
+        6. Polaris
+        7. Kuda`)
+        let enter = prompt(`Enter receipt's Account no or phone no or surname `)
+        pin = prompt('Please enter your pin')
+        confirmation = confirm(`Are you sure you want to transfer #${amount} to this account no: ${enter}`)
+        alert(`Transaction successful`)
+    }
+    </script>
+  </body>
+</html>
