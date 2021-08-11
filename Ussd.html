@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Ussd</title>
+</head>
+<body>
+    <script>
+        var ussd = Number(prompt("Welcome Generic User \n \n1. Airtime Self \n2. Airtime Others \n3. Data \n4. Transfer  \n \n Select an Option"))
+
+        if (ussd == 1) 
+        {
+            amount = Number(prompt("Please Enter Amount"))
+            if(amount < 100){
+                alert("Amount is too Low!!")
+                
+            }else if(amount >= 100){
+                alert("Transaction Successful!")
+            }else{
+            alert("Invalid Input, Try Again")
+        }           
+        }
+        if (ussd == 2) {   
+            Other_User = Number(prompt("Please Enter 3rd Party Mobile Number"))
+            amount = Number(prompt("Please Enter Amount"))
+            if(amount < 100){
+                alert("Amount is too Low!!")
+                
+            }else if(amount >= 100){
+                alert("Alright")
+                token = Number(prompt("Please enter Token"))
+            var confirmation = confirm(`Are you sure You want to Credit ${Other_User} with ${amount}???`)
+            if(confirmation == true)
+            {
+                alert("Thanks for Confirming")
+            }
+            else{
+                alert("Oh Oh")}
+            }else{
+            alert("Invalid Input, Try Again")
+            }
+            
+        }
+    
+        if (ussd == 3){
+            Data = Number(prompt("1. MTN \n2. GLO \n3. Airtel \n4. Etisalat \n \n Please Select Your Oparator"))
+            if (ussd == 1) {
+                amount = Number(prompt("Please Enter Amount"))
+                if(amount < 100){
+                alert("Amount is too Low!!")
+                
+            }else if(amount >= 100){
+                alert("Alright")
+                token = Number(prompt("Please enter Token"))
+            var confirmation = confirm(`Are you sure You want to Credit ${Other_User} with ${amount}???`)
+            if(confirmation == true)
+            {
+                alert("Thanks for Confirming")
+            }
+            else{
+                alert("Oh Oh")
+            }  
+            }
+        }else{
+            alert("Invalid Input, Try Again")
+            
+        }
+        if (ussd == 4) {   
+            Account_Number = Number(prompt("Please Enter Account Number"))
+            Bank_Acct = prompt("Please Enter Destination Bank")
+            amount = Number(prompt("Please Enter Amount"))
+            
+            if(amount < 100){
+                alert("Amount is too Low!!")
+                
+            }else if(amount >= 100){
+                alert("Alright")
+                token = Number(prompt("Please enter Token"))
+            var confirmation = confirm(`Are you sure You want to Credit ${Account_Number} of ${Bank_Acct} with ${amount}???`)
+            if(confirmation == true)
+            {
+                alert("Thanks for Confirming")
+            }
+            else{
+                alert("Oh Oh")}
+            }else{
+            alert("Invalid Input, Try Again")
+            }
+    } 
+                
+            
+            
+}
+   
+
+        
+
+    </script>
+</body>
+</html>
