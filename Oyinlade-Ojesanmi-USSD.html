@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: lightskyblue;
+        }
+        h2{
+         text-align: center;
+         color: white;
+         font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        p{
+           
+            font-size: 24px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding: 10px auto;
+           
+        }
+
+        form{
+            text-align: center;
+           
+        }
+        button{
+            color: tomato;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Welcome to USSD Banking.</h2>
+    <p>Please note that a #6.98 network will be applied to your account for banking services on this channel.</p>
+    <form action="" onsubmit="bank()">
+        <button type="submit">Accept</button>
+        <button type="reset">Decline</button>
+    </form>
+     <!-- <button><a href="/">Decline</a></button> -->
+
+    <script>
+        function bank(){
+            alert("Kindly enter \n 1. Airtime-self \n 2. Airtime-Others \n 3. Data \n 4. Transfer")
+            var service = Number(prompt("Please, enter the number of the service you want to perform"))
+            if (service == 1 && !Number.isNaN(service)){
+                var number = Number(prompt("Please enter amount"))
+                {
+                    alert("Request Processing")
+                }
+            }else if(service == 2 && !Number.isNaN(service)){
+                Number(prompt("Please enter 3rd party mobile number"))
+               Number(prompt("Please enter amount"))
+                Number(prompt("please enter your 737 Pin or Token code to Top Up your number on MTN or 0 to cancel"))
+                {
+                    alert("Request Processing")
+                }
+        }else if(service == 3 && !Number.isNaN(service)){
+            alert("purchase data for \n 1. Self \n 2. Third party")
+            var service = Number(prompt("Please, enter the number of the service you want to perform"))
+            if (service == 1 && !Number.isNaN(service)){
+                {
+                    alert("Select MTN bundle \n 1. 100MB 1 day #100 \n 2. 350MB 7 days #300 \n 3. 750MB 14 dys #500 \n 4. 1GB 1 day #300 \n 5. 1.5GB 1 month #1500")
+                }
+                var number = Number(prompt("Please enter amount"))
+                {
+                    alert("Request Processing")
+                }
+            }else if(service == 2 && !Number.isNaN(service)){
+                Number(prompt("Please enter 3rd party mobile number"))
+                {
+                    alert("Select MTN bundle \n 1. 100MB 1 day #100 \n 2. 350MB 7 days #300 \n 3. 750MB 14 dys #500 \n 4. 1GB 1 day #300 \n 5. 1.5GB 1 month #1500")
+                }
+               Number(prompt("Please enter amount"))
+                
+                Number(prompt("please enter your 737 Pin or Token code to get data on MTN or 0 to cancel"))
+                
+                {
+                    alert("Request Processing")
+                }
+            }
+        }else if(service == 4 && !Number.isNaN(service)){
+            Number(prompt("Please enter the mobile number"))
+               Number(prompt("Please enter amount"))
+                Number(prompt("please your 737 Pin or Token code to complete your transfer on MTN or 0 to cancel")) 
+                {
+                    alert("Request Processing")
+                }
+        }else {
+            alert("Wrong input")
+        }
+    }
+
+
+    </script>
+</body>
+</html>
