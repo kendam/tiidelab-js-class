@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1</title>
+</head>
+<body>
+    
+    <script>
+        //options to select from
+        var option = prompt(
+            `Welcome to *894# banking
+            1. Airtime (self)
+            2. Airtime (others)
+            3. Data
+            4. Transfer`
+        )
+        var pin;
+
+        //option 1 - Airtime (self)
+        if (option == 1) {
+            prompt("Enter amount:");
+            alert("Recharge Successful");
+        }
+        //option 2 - Airtime (others)
+        else if (option == 2){
+            amount = prompt("Enter amount:");
+            number = prompt("Enter mobile number:");
+            pin = prompt(
+            `Recharge of #${amount} to ${number}
+            Please enter your 5 digit PIN:`
+            );
+            if (pin == 12345) {
+                alert("Recharge Successful")
+            }
+            else{
+                alert("Incorrect pin")
+            }
+        }
+        //option 3 - Data
+        else if (option == 3){
+            selectData = prompt(`1. 75MB 1Day N100
+2. 200MB 2Days N500
+3. 2GB 30Days N1200`
+            );
+            
+            if(selectData == 1 || selectData == 2 || selectData == 3) {
+                number = prompt("Enter mobile number:")
+                prompt(`Recharge of ${selectData} to ${number}
+                Please enter your 5 digit PIN:`
+                );
+                //enter pin
+                pin = prompt(
+                    `Recharge of #${amount} to ${number}
+                    Please enter your 5 digit PIN:`
+                );
+                //correct pin
+                if (pin == 12345) {
+                 alert("Recharge Successful")
+                }
+                //wrong pin
+                else{
+                    alert("Incorrect pin")
+                }
+            }
+            else{
+                alert("Wrong input");
+            }
+            
+        }
+
+        //option 4 - Transfer
+        else if (option == 4) {
+            amount = prompt("Enter amount:");
+            accountNumber = prompt("Enter Account number:");
+            //select bank
+            prompt(`Select recipient bank
+                    1. First Bank
+                    2. GTB
+                    3. UBA
+                    4. Access Bank `
+            );
+            //enter pin
+            pin = prompt(
+                    `Transfer of ${amount} to ${accountNumber}
+                    Please enter your 5 digit PIN:`
+            );
+            //correct pin
+            if (pin === 12345) {
+                 alert("Recharge Successful")
+            }
+            //incorrect pin
+            else{
+                alert("Incorrect pin")
+            }
+        }
+
+
+        //when option not listed is selected
+        else{
+            alert("Wrong input");
+        }
+    </script>
+</body>
+</html>
