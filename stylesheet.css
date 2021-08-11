@@ -1,0 +1,11 @@
+body{
+    background-color: aqua;
+}
+
+#display{
+    color:black;
+    font-size: large;
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+
+}
