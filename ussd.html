@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var name = prompt("Please enter your name");
+        // alert(name);
+        if(confirmation == true)
+            {
+                alert("Transaction Successful")  
+            }
+        var Airtime_Self, Airtime_Others, Data, pin, Transfer;
+        var ussd = prompt("Welcome, What Will you like to do? \n 1. Airtime_Self \n 2. Airtime_Others \n 3. Data \n 4. Transfer")
+        if(ussd == 1)
+        {
+            // alert("Airtime_Self, click ok to continue!")
+            // prompt("Enter Your Number:")
+            prompt("Enter the amount:")
+            if(confirmation == true)
+            {
+                alert("Transaction Successful")  
+            }
+            alert("Congratulations, you have been credited.")
+            
+        }
+        else if(ussd == 2)
+        {
+            // alert("Airtime_Others, click ok to continue!")
+            var ussd = Number(prompt("Enter Your Number:"))
+            if(confirmation == true)
+            {
+                alert("Transaction Successful")  
+            }
+            Airtime_Others = Number(prompt("Enter the amount your want to recharge"))
+            if(confirmation == true)
+            {
+                alert("Transaction Successful")  
+            }
+            alert("Transaction Successful!")
+        }
+        else if(ussd == 3)
+        {
+            // alert("Data, click ok to continue!")
+            var ussd = Number(prompt("Please select \n 1. Self \n 2. Others"))
+            
+            // ussd = Number(data())
+            if(ussd == 1)
+            {
+                ussd = Number(prompt("Enter the amount:"))
+            }
+            
+            else if(ussd == 2)
+            {
+                ussd = Number(prompt("Enter third party mobile no:"))
+                ussd = Number(prompt("Enter the amount:"))
+            }
+            else{
+                alert("Oop! you have entered wrong digit")
+            }
+            // var ussd = Number(prompt("Enter the amount:"))
+            alert("Transaction Successful")
+        }
+        else if(ussd == 4)
+        {
+            // alert("Transfer, click ok to continue!")
+            var ussd = Number(prompt("Enter Beneficiary Acount Number and click Ok!"))
+            var ussd = Number(prompt("Enter the amount:"))
+            pin = Number(prompt("Enter your pin"))
+            var confirmation = prompt("Are you sure, you want to proceed?")
+            if(confirmation == true)
+            {
+                alert("Transaction Successful")  
+            }
+        }
+        else{
+            alert("Oop! You have entered a wrong digit!. Try again later.")
+        }
+    </script>
+</body>
+</html>
