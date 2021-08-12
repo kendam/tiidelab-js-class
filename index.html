@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+                        //    USSD SERVICES
+
+        // Get user input
+        var ussdServices = prompt("Welcome! \nMon_Cheri USSD Services.\n \n 1.  Airtime (self) \n 2.  Airtime (others) \n 3.  Data \n 4.  Transfer");
+    
+        // Convert user input into number
+        ussdServices = Number(ussdServices);
+  
+        // FOR AIRTIME_SELF
+        // Conditional statement when & if user selects option 1
+        if (ussdServices == 1) {
+  
+          // Statement to enter amount and check if valid numeric input
+          let amount = prompt("Enter amount");
+          amount = Number(amount);
+          while (Number.isNaN(amount)) {
+            amount = prompt("Amount not valid \nEnter valid amount");
+          }
+  
+          // Statement to confirm or cancel transaction
+          let confirmation = confirm(`Buy airtime of #${amount}`);
+          if (confirmation == true) {
+            alert("Transaction successful!");
+          } else {
+            alert("Transaction cancelled!");
+          }
+        }
+  
+        // FOR AIRTIME_OTHERS
+        // Conditional statement when & if user selects option 2
+        if (ussdServices == 2) {
+  
+          // Statement to enter phone number and check if valid numeric input
+          let number = prompt("Enter phone number");
+          number = Number(number);
+          while (Number.isNaN(number)) {
+            number = prompt("Number not valid \nEnter valid number");
+          }
+  
+          // Statement to enter amount and check if valid numeric input
+          let amount = prompt("Enter amount");
+          amount = Number(amount);
+          while (Number.isNaN(amount)) {
+            amount = prompt("Amount not valid \nEnter valid amount");
+          }
+  
+          // Statement to confirm or cancel transaction
+          let confirmation = confirm(`Recharge of N${amount} to ${number}`);
+          if (confirmation == true) {
+            alert("Transaction successful!");
+          } else {
+            alert("Transaction cancelled!");
+          }
+        }
+  
+        // BUY DATA SECTION
+        // Conditional statement when & if user selects option 3
+        if (ussdServices == 3) {
+          // Statement to select service and check if input is a valid number
+          let data = prompt(
+            "Buy Data for:\n1. Self\n2. 3rd Party"
+          );
+          data = Number(data);
+          while (Number.isNaN(data)) {
+            data = prompt("Invalid selection \nTry again");
+          }
+  
+          // Conditional statement when & if user selects option 1
+          if (data == 1) {
+  
+            // Statement to select service. Then check if input is a valid number
+            let person = prompt(
+              "1. 50GB 30Days N10000\n2. 13.25GB 30Days N4000\n3. 4.1GB 30Days N1500\n4. 7.7GB 30Days N2500\n5. 2.9GB 30Days N1000"
+            );
+            person = Number(person);
+            while (Number.isNaN(person)) {
+              person = prompt("Invalid selection \nTry again");
+            }
+  
+            // Statement to confirm or cancel transaction 
+            let confirmation = confirm("Confirm purchase");
+            if (confirmation == true) {
+              alert("Transaction successful!");
+            } else {
+              alert("Transaction cancelled!");
+            }
+          }
+  
+          // Conditional statement when & if user selects option 2
+          if (data == 2) {
+            // Statement to enter phone number. Then check if valid numeric input
+            let number = prompt("Please enter phone number");
+            number = Number(number);
+            while (Number.isNaN(number)) {
+              number = prompt("Invalid phone number \nEnter valid phone number");
+            }
+  
+            // Statement to select service and check if input is a valid number
+            let other = prompt(
+              "1. 2GB 30Days N1200\n2. 4.5GB 30Days N3500\n3. 100MB 1Days N100\n4. 250MB 2Days N200\n5. 750GB 3Days N500"
+            );
+            other = Number(other);
+            while (Number.isNaN(other)) {
+              other = prompt("Invalid selection \nTry again");
+            }
+  
+            // Statement to confirm or cancel transaction
+            let confirmation = confirm("Confirm purchase");
+            if (confirmation == true) {
+              alert("Transaction successful!");
+            } else {
+              alert("Transaction cancelled!");
+            }
+          }
+        }
+  
+        // TRANSFER FUNDS SECTION
+        // Conditional statement when & if user selects option 4
+        if (ussdServices == 4) {
+          // Statement to enter amount and check if valid numeric input
+          let amount = prompt("Enter amount");
+          amount = Number(amount);
+          while (Number.isNaN(amount)) {
+            amount = prompt("Invalid amount \nEnter amount");
+          }
+  
+          // Statement to enter account number and check if valid numeric input
+          let account = prompt("Enter account Number");
+          account = Number(account);
+          while (Number.isNaN(account)) {
+            account = prompt("Invalid account number \n Enter valid account number");
+          }
+  
+          // Statement to confirm or cancel transaction 
+          let confirmation = confirm(
+            `Transfer of N${amount} to ${account} account number`
+          );
+          if (confirmation == true) {
+            alert("Transaction Successful!");
+          } else {
+            alert("Transaction cancelled!");
+          }
+        }
+      </script>
+       
+</body>
+</html>
