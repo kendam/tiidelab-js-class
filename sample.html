@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Class</title>
+</head>
+<body>
+    <script>
+        //  Banking USSD APP
+        var ussdCode, welCome, yourOption, Airtime_self, Airtime_others, Data, Transfer_to_Gtb, Transfer_to_others, amount, pin, confirmation, bank_name;
+        var ussdCode= prompt("Please input your USSD code");
+        if(ussdCode == "737"){
+            var welCome= prompt(`Welcome to USSD banking. \n Please note that N6.98 network charge will be applied to your bank account for services on this channel. 
+            \n Press 1 to proceed`);
+            if(welCome =="1"){
+                yourOption= (prompt(` 
+                1. Airtime-Self 
+                2. Airtime-Others 
+                3. Data 
+                4. Trsf-GTB 
+                5. Trsf-Others 
+                6. Trsf-MFB / eWallet 
+                7. Cable TV 
+                8. Pay Bills 
+                9. Help`));
+                yourOption= Number(yourOption);
+                // Airtime self option
+                if (yourOption == 1) {
+                        var Airtime_self= prompt('Enter amount:');
+                        Airtime_self = Number(Airtime_self)
+                        alert(`Your #${Airtime_self} recharge has been successful, thanks for using this service.`)
+                }
+                // Airtime others section
+                else if (yourOption == 2) {
+                    Airtime_others = prompt("Please Enter 3rd party mobile number");
+                     // if it is a number, fine, else Invalid(if it is less than 11 digits or has signs and symbol) 3rd party number. Please enter the correct mobile number.
+                    amount = Number(prompt("Please enter amount:"));
+                    pin = prompt('Please enter your pin');
+                    if(pin =="1999"){
+                        confirmation = confirm(`Are you sure you want to recharge #${amount} to this number: ${Airtime_others}`);
+                        if (confirmation == true) {
+                        alert(`You've successfully recharge #${amount} for ${Airtime_others}, thanks for using this service.`);
+                        }
+                    }
+                    else{
+                        alert("Incorrect Pin")
+                    }
+                    
+                }
+                // Data subscription section
+                else if (yourOption == 3) {
+                    let option_data = Number(prompt(`
+                    Purchase data for:
+                    1. Self
+                    2. 3rd Party`));
+                    // Data subscription for self
+                    if (option_data == 1) {
+                        Data = prompt(`
+                        Select your Bundle
+                        1. 100MB 1day #100
+                        2. 350MB 7days #300
+                        3. 750MB 14days #500
+                        4. 1GB 1day #300
+                        5. 1.5GB 30days #1000`);
+                        alert("Transaction successful");
+                        }
+                    //Data subscription for others
+                    else {
+                        let ask = prompt("Please Enter 3rd party mobile number ");
+                        Data = prompt(`
+                        Select your Bundle
+                        1. 100MB 1day #100
+                        2. 350MB 7days #300
+                        3. 750MB 14days #500
+                        4. 1GB 1day #300
+                        5. 1.5GB 30days #1000`);
+                        alert("Transaction successful");
+                    }
+                }
+                // Transfer to GTBank users section
+                else if (yourOption == 4) {
+                    amount = Number(prompt("Please enter amount:"));
+                    let enter = prompt(`Enter receipt's Account no or phone no or surname `);
+                    pin = prompt('Please enter your pin');
+                    if(pin =="1999"){
+                        confirmation = confirm(`Are you sure you want to transfer #${amount} to this account no: ${enter}`);
+                    alert(`Transaction successful`);
+                    }
+                    else{
+                        alert("Incorrect Pin")
+                    }
+                }
+                // Transfer to other bank customers
+                else if (yourOption == 5){
+                    amount = Number(prompt("Please enter amount:"));
+                    bank_name = prompt(`
+                    1. Zenith Bank
+                    2. UBA
+                    3. First Bank
+                    4. Access Bank
+                    5. Ecobank
+                    6. Polaris
+                    7. Kuda`);
+                    let enter = prompt(`Enter recipient's Account no or phone no or surname `);
+                    pin = prompt('Please enter your pin');
+                    if(pin =="1999"){
+                        confirmation = confirm(`Are you sure you want to transfer #${amount} to this account no: ${enter}`);
+                    alert(`Transaction successful`);
+                    }
+                    else{
+                        alert("Incorrect Pin")
+                    }
+                }
+            }
+            else{
+                alert('Error');
+            }
+            
+        }
+        else{
+            alert("Unknown code");
+        } 
+    </script>
+</body>
+</html>
