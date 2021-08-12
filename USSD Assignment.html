@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USSD Assignment</title>
+</head>
+<body>
+    <script>
+       
+
+        const USSD = 737 
+        var bankcode = prompt('Enter your Online Banking Code')
+        //bankcode = Number(bankcode);
+
+        if (bankcode == `*${USSD}#`) {
+            alert ("Welcome to GTB USSD banking, Please note that a N6.98 network charge will be applied to your account for banking services on this channel")
+        
+        if (!Number.isNaN(bankcode)) 
+        {
+            var select = prompt(`
+            BANK USSD
+            1. Airtime Self
+            2. Airtime Others
+            3. Data
+            4. Transfer `);
+
+            
+            if (select == 1) //Airtime Self
+            {    
+                var amount = prompt(`
+                CHOOSE AMOUNT
+                1. #500
+                2. #400
+                3. #300
+                4. #200`);
+
+                if (amount == 1) {
+                alert("#500 Transaction successful");
+                } else if (amount == 2) {
+                alert("#400 Transaction successful");
+                } else if (amount == 3) {
+                alert("#300 Transaction successful");
+                } else if (amount == 4) {
+                alert("#200 Transaction successful");
+                } else {
+                alert("No input selected");
+                }
+
+            } //end-tag for select one
+
+            
+
+        if (select == 2) //  Airtime Others
+        {
+            var card = prompt(`
+                Select Recepient Network
+                1. mtn
+                2. Airtel
+                3. Etisalat
+                4. Glo`);
+                
+                var number = prompt (`Enter Number`)
+                if (isNaN(number) ) {
+                    alert ("wrong input") 
+                }
+                
+                if (card == 1) {
+                var amount = prompt(`  
+                1. #500
+                2. #400
+                3. #300
+                4. #200`);
+
+                if (amount == 1) {
+                alert("#500 Transaction successful");
+                } else if (amount == 2) {
+                alert("#400 Transaction successful");
+                } else if (amount == 3) {
+                alert("#300 Transaction successful");
+                } else if (amount == 4) {
+                alert("#200 Transaction successful");
+                } else {
+                alert("No input selected");
+                }
+            }
+
+                else if (card == 2) {
+                var amount = prompt
+                (`
+                ENTER AMOUNT
+                1. #500
+                2. #400
+                3. #300
+                4. #200 `);
+
+                if (amount == 1) {
+                alert("#500 Transaction successful");
+                } else if (amount == 2) {
+                alert("#400 Transaction successful");
+                } else if (amount == 3) {
+                alert("#300 Transaction successful");
+                } else if (amount == 4) {
+                alert("#200 Transaction successful");
+                } else {
+                alert("No input selected");
+                }
+            }
+            
+                else if (card == 3) {
+                var amount = prompt(`
+                ENTER AMOUNT
+                1. #500
+                2. #400
+                3. #300
+                4. #200`);   
+                if (amount == 1) {
+                alert("#500 Transaction successful");
+                } else if (amount == 2) {
+                alert("#400 Transaction successful");
+                } else if (amount == 3) {
+                alert("#300 Transaction successful");
+                } else if (amount == 4) {
+                alert("#200 Transaction successful");
+                } else {
+                alert("No input selected");
+                }
+            }   
+            
+                else if (card == 4) {
+                var amount = prompt
+                (`ENTER AMOUNT
+                1. #500
+                2. #400
+                3. #300
+                4. #200`);
+                if (amount == 1) {
+                alert("#500 Transaction successful");
+                } else if (amount == 2) {
+                alert("#400 Transaction successful");
+                } else if (amount == 3) {
+                alert("#300 Transaction successful");
+                } else if (amount == 4) {
+                alert("#200 Transaction successful");
+                } else {
+                alert("No input selected");
+                }
+            }
+        } //end-tag for select two
+
+        if (select == 3) //Data
+        {
+            var data = prompt(`
+                1. Self
+                2. Third Party `);
+
+            if (data == 1) {
+                var amount = prompt(`
+                1. 2GB 30Days N1200
+                2. 12GB 30Days N3500
+                3. 25GB 30Days N6000
+                4. 2.5GB 2Days N500 `);
+
+                if (amount == 1) {
+                alert("2GB Transaction successful");
+                } else if (amount == 2) {
+                alert("12GB Transaction successful");
+                } else if (amount == 3) {
+                alert("25GB Transaction successful");
+                } else if (amount == 4) {
+                alert("2.5GB Transaction successful");
+                } else {
+                alert("No input selected");
+                }
+            }
+
+                else if (data == 2) {
+
+                var number = prompt (`Enter Mobile Number`)
+                if (isNaN(number) ) {
+                    alert ("wrong input") 
+                    
+                }
+
+                var amount = prompt(`
+                1. 2GB 30Days N1200
+                2. 12GB 30Days N3500
+                3. 25GB 30Days N6000
+                4. 2.5GB 2Days N500 `);
+
+                if (amount == 1) {
+                alert("2GB Transaction successful");
+                } else if (amount == 2) {
+                alert("12GB Transaction successful");
+                } else if (amount == 3) {
+                alert("25GB Transaction successful");
+                } else if (amount == 4) {
+                alert("2.5GB Transaction successful");
+                } else {
+                alert("No input selected");
+                }         
+            }
+        } //end-tag for select 3 data
+        
+
+        // 4. Transfer{
+        //         amount 
+        //         acct number
+        //         bank options
+        //         your pin 
+        //         sucessful
+        //     }
+        const pin = 0000
+        if (select == 4) //Transfer
+        {
+                var amount = prompt (`Amount`)
+                if (isNaN(amount)) {
+                    alert ("wrong input")     
+                }
+            
+                var acct_no = prompt (`Recipient Account Number`)
+                if (isNaN(acct_no) ) {
+                    alert ("wrong input")     
+                }
+
+                var bank = prompt (`Select Bank
+                1. Access Bank Plc
+                2. Ecobank Nigeria Plc
+                3. Fidelity Bank Plc
+                4. FIRST BANK NIGERIA LIMITED
+                5. Guaranty Trust Bank Plc
+
+                `)
+                if (bank == 1) {
+                    var bank_name = prompt (`Enter your pin`)
+                    if (isNaN(bank_name) ) {
+                    alert ("wrong input")     
+                }
+                else {
+                alert("Transaction Successfull");
+                }
+                }
+
+                if (bank == 2) {
+                var bank_name = prompt (`Enter your pin`)
+                if (isNaN(bank_name) ) {
+                alert ("wrong input")     
+                }
+                else {
+                alert("Transaction Successfull");
+                }
+                }
+
+                if (bank == 3) {
+                var bank_name = prompt (`Enter your pin`)
+                if (isNaN(bank_name) ) {
+                alert ("wrong input")     
+                }
+                else {
+                alert("Transaction Successfull");
+                }
+                }
+
+                if (bank == 4) {
+                var bank_name = prompt (`Enter your pin`)
+                if (isNaN(bank_name) ) {
+                alert ("wrong input")     
+                }
+                else {
+                alert("Transaction Successfull");
+                }
+                }
+
+                if (bank == 5) {
+                var bank_name = prompt (`Enter your pin`)
+                if (isNaN(bank_name) ) {
+                alert ("wrong input")     
+                }
+                else {
+                alert("Transaction Successfull");
+                }
+                }
+            
+           
+            } //end-tag for select 4 transfer
+
+        
+        } //Function end tag
+        } //final end tag
+        else {
+            alert ("Invalid Bank code")
+        }
+
+         /* Assignment
+            Bank USSD *737#  
+            1. Airtime-self
+            2. Airtime-others
+            3. Data
+            4. Transfer{
+                amount 
+                acct number
+                your pin 
+                sucessful
+            }
+            */
+    </script>
+    <!-- *737# -->
+</body>
+</html>
