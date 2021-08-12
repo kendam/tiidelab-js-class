@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Akanbi Munirudeen Abidemi
+//Banking Ussd  code
+ var name = prompt('what is your name ')
+ alert (`welcome ${name}  to GTBank Ussd platform, pls note that #6.9 charges apply for using this service`);
+ var Airtime_self , Airtime_to_others , Data , Transfer; 
+ var menu = Number (prompt(`
+ 1.  Airtime_self
+ 2.  Airtime_to_others 
+ 3.  Data 
+ 4.  Transfer`));
+
+ //Airtime-self
+ if (menu == 1){
+     var amount = Number (prompt("Pls enter amount"))
+     alert (`#${amount} has been recharged successfully`)
+ }
+ 
+ //Airtime to others 
+ else if (menu == 2){
+     var number = Number (prompt('Pls enter phone number'))
+     var amount = Number (prompt('Pls enter Amount you want to recharge'))
+     Airtime_to_others=Number(prompt(`
+     1.MTN
+     2.AIRTEL
+     3.GLO
+     4.Etisalat`)
+                   )
+      var pin = Number (prompt('Pls enter the 4-Digit number of your card'))             
+     alert (`#${amount} has been successfully recharged to ${number}`)
+  
+ }
+//Data purchase
+else if (menu == 3){
+    var mode = Number(prompt(`Select Mode of Data Purchase
+    1.Self
+    2.To_others`))
+    var number = Number (prompt('Pls enter phone number'))
+    var price = Number (prompt(`Price lists
+    1.500mb @ 100/2days
+    2.1GB @ 300/7days
+    3.2GB @ 500/A month`
+    ))
+    var pin = Number (prompt('Pls enter the 4-Digit number of your card'))
+    alert(`You have Purchased data on ${number}`)
+}
+//Bank Transfer
+else if (menu == 4){
+    var scope = Number(prompt(`Select Bank for transactions
+    1. GTbank
+    2. FirstBank
+    3. Access Bank
+    4. Sterling Bank
+    5. UBA
+    6. Unity Bank
+    7. Fidelity Bank
+    8. Providus Bank
+    9. Kuda Mfb
+    10. Polaris Bank`)) 
+    var number = Number (prompt('Pls enter Account number'))
+    var amount = Number (prompt('Pls enter Amount you want to transfer'))
+    var confirmation = confirm(`You are about to send ${amount} to account number ${number}`)
+    if (confirmation == true)
+    var pin = Number (prompt('Pls enter the 4-Digit number of your card'))
+    alert(`You have successfully transferred #${amount} to ${number}`)
+
+
+
+}
+
+
+
+
+    </script>
+</body>
+</html>
