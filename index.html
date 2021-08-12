@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiidelab Assignment</title>
+</head>
+<body>
+    <script>
+        let ussd = prompt("Enter you USSD")
+        if (ussd == 737){
+            let num = prompt(`
+                    1. Airtime self
+                    2. Airtime Others
+                    3. Data
+                    4. Transfer`)
+                    if(num == 1){
+                        let airtime_self = prompt("Please enter amount")
+                        if(airtime_self){
+                            alert("Successful")
+                        }
+                    }else if(num == 2){
+                        prompt("Enter number")
+                        let airtime_other = prompt("Please enter amount")
+                        if(airtime_other){
+                            alert("Succesful")
+                        }
+                    }else if(num == 3){
+                        prompt("Enter number")
+                        let data = prompt("Please enter data amount")
+                        if(data){
+                            alert("Data purchased Successfully")
+                        }
+                    }else if(num == 4){
+                        prompt("Enter account number")
+                        let transfer = prompt("Please Enter amount")
+                        if(transfer){
+                            alert("Transfer Successful")
+                        }
+                    }
+        }else{
+            alert("wrong USSD")
+        }
+    </script>
+</body>
+</html>
