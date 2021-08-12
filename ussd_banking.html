@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank Transaction assignment</title>
+    <style>
+      body {
+        background: teal;
+        text-align: center;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // Get user input
+      var bankTransaction = prompt(
+        `Welcome to UniqueBay USSD Bank Service \n1. Airtime self \n2. Airtime for others \n3. Data \n4. Transfer \n0. Cancel`
+      );
+
+      // Convert user input into number
+      bankTransaction = Number(bankTransaction);
+
+      // Conditional statement if/when user choose option 1
+      if (bankTransaction == 1) {
+        // Statement to enter amount and check if valid numeric input
+        let amount = prompt("Enter amount");
+        amount = Number(amount);
+        while (Number.isNaN(amount)) {
+          amount = prompt("Amount not valid \nEnter valid amount");
+        }
+
+        // Statement to confirm or cancel transaction with transaction details
+        let confirmation = confirm(`Buy airtime of #${amount}`);
+        if (confirmation == true) {
+          alert("Transaction complete");
+        } else {
+          alert("Transaction cancelled");
+        }
+      }
+
+      // Conditional statement if/when user choose option 2
+      if (bankTransaction == 2) {
+        // Statement to enter phone number and check if valid numeric input
+        let number = prompt("Enter phone number");
+        number = Number(number);
+        while (Number.isNaN(number)) {
+          number = prompt("Number not valid \nEnter valid number");
+        }
+
+        // Statement to enter amount and check if valid numeric input
+        let amount = prompt("Enter amount");
+        amount = Number(amount);
+        while (Number.isNaN(amount)) {
+          amount = prompt("Amount not valid \nEnter valid amount");
+        }
+
+        // Statement to enter personal pin and check if valid numeric input
+        let pin = prompt("Please enter your 4 digit PIN");
+        pin = Number(pin);
+        while (Number.isNaN(pin)) {
+          pin = prompt("Invalid pin \nEnter valid 4 digit pin again");
+        }
+
+        // Statement to confirm or cancel transaction with transaction details
+        let confirmation = confirm(`Recharge of N${amount} to ${number}`);
+        if (confirmation == true) {
+          alert("Transaction complete");
+        } else {
+          alert("Transaction cancelled");
+        }
+      }
+
+      // Conditional statement if/when user choose option 3
+      if (bankTransaction == 3) {
+        // Statement to select service and check if input is a valid number
+        let data = prompt(
+          "Purchase Data for:\n1. Self\n2. 3rd Party\n 0. Cancel"
+        );
+        data = Number(data);
+        while (Number.isNaN(data)) {
+          data = prompt("Invalid selection \nEnter again");
+        }
+
+        // Conditional statement if/when user choose option 1
+        if (data == 1) {
+          // Statement to select service and check if input is a valid number
+          let person = prompt(
+            "1. 50GB 30Days N10000\n2. 13.25GB 30Days N4000\n3. 4.1GB 30Days N1500\n4. 7.7GB 30Days N2500\n5. 2.9GB 30Days N1000"
+          );
+          person = Number(person);
+          while (Number.isNaN(person)) {
+            person = prompt("Invalid selection \nEnter again");
+          }
+
+          // Statement to confirm or cancel transaction with transaction details
+          let confirmation = confirm("Confirm purchase");
+          if (confirmation == true) {
+            alert("Transaction complete");
+          } else {
+            alert("Transaction cancelled");
+          }
+        }
+
+        // Conditional statement if/when user choose option 2
+        if (data == 2) {
+          // Statement to enter phone number and check if valid numeric input
+          let number = prompt("Please enter phone number");
+          number = Number(number);
+          while (Number.isNaN(number)) {
+            number = prompt("Invalid number \nEnter valid phone number");
+          }
+
+          // Statement to select service and check if input is a valid number
+          let other = prompt(
+            "1. 2GB 30Days N1200\n2. 25GB 30Days N3500\n3. 75MB 1Days N100\n4. 200MB 2Days N200\n5. 2.5GB 2Days N500"
+          );
+          other = Number(other);
+          while (Number.isNaN(other)) {
+            other = prompt("Invalid selection \nEnter again");
+          }
+
+          // Statement to enter personal pin and check if valid numeric input
+          let pin = prompt("Please enter your 4 digit PIN");
+          pin = Number(pin);
+          while (Number.isNaN(pin)) {
+            pin = prompt("Invalid pin \nEnter valid 4 digit pin again");
+          }
+
+          // Statement to confirm or cancel transaction with transaction details
+          let confirmation = confirm("Confirm purchase");
+          if (confirmation == true) {
+            alert("Transaction complete");
+          } else {
+            alert("Transaction cancelled");
+          }
+        }
+
+        // Conditional statement if/when user choose option 0
+        if (data == 0) {
+          // Statement to confirm or cancel transaction with transaction details
+          let confirmation = confirm(`Cancel transaction`);
+          if (confirmation == true) {
+            alert("Thanks for banking with us");
+          } else {
+            alert(
+              "Oga/Madam make a decision. No come dea disturb your village people here."
+            );
+          }
+        }
+      }
+
+      // Conditional statement if/when user choose option 4
+      if (bankTransaction == 4) {
+        // Statement to enter amount and check if valid numeric input
+        let amount = prompt("Enter amount");
+        amount = Number(amount);
+        while (Number.isNaN(amount)) {
+          amount = prompt("Invalid amount \nEnter amount");
+        }
+
+        // Statement to enter bank name and check if valid text input
+        let bank = prompt("Recipient Bank");
+        for (const index in bank) {
+          let char = bank[index];
+          if (!isNaN(parseFloat(char))) {
+            bank = prompt("Invalid Bank Name \nRecipient Bank again");
+            break;
+          }
+        }
+
+        // Statement to enter account number and check if valid numeric input
+        let aza = prompt("Enter account Number");
+        aza = Number(aza);
+        while (Number.isNaN(aza)) {
+          aza = prompt("Invalid aza \nDrop beta aza");
+        }
+
+        // Statement to enter bank name and check if valid text input
+        let name = prompt("Recipient Name");
+        for (const index in name) {
+          let char = name[index];
+          if (!isNaN(parseFloat(char))) {
+            name = prompt("Invalid Name \nRecipient Name again");
+          }
+        }
+
+        // Statement to enter personal pin and check if valid numeric input
+        let pin = prompt("Please enter your 4 digit PIN");
+        pin = Number(pin);
+        while (Number.isNaN(pin)) {
+          pin = prompt("Invalid pin \nEnter valid 4 digit pin again");
+        }
+
+        // Statement to confirm or cancel transaction with transaction details
+        let confirmation = confirm(
+          `Transfer of N${amount} to ${aza} account number`
+        );
+        if (confirmation == true) {
+          alert("Transaction complete");
+        } else {
+          alert("Transaction cancelled");
+        }
+      }
+
+      // Conditional statement if/when user choose option 0
+      if (bankTransaction == 0) {
+        // Statement to confirm or cancel transaction with transaction details
+        let confirmation = confirm(`Cancel transaction`);
+        if (confirmation == true) {
+          alert("Thanks for banking with us");
+        } else {
+          alert(
+            "Oga/Madam make a decision. No come dea disturb your village people here."
+          );
+        }
+      }
+    </script>
+    <h1>UNIQUEBAY USSD WEB BANKING SERVICE.</h1>
+  </body>
+</html>
