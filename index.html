@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Musa_ussd</title>
+</head>
+<body>
+    <script>
+        var choice = prompt(`Welcome to Customer Self USSD Service.Press 1 for Airtime-Self
+                                                                    2 for Airtime-Others
+                                                                    3 for Data
+                                                                    4 for Transfer`)
+
+
+// Process requests
+if (choice === '1') {
+    // Process Airtime-Self
+    let amount = Number(prompt("Enter recharge amount"))
+    if (!Number.isNaN(amount)) {
+        var confirmation = confirm("Confirm recharge to your number")
+        if (confirmation == true) {
+            // Perform recharge
+            alert("Transaction successful")
+        }
+        else {
+            alert("Transaction unsuccessful.")
+        }
+    }
+    else {
+        alert("Invalid Transaction.")
+    }
+}
+
+else if (choice === '2') {
+    // Process Airtime-Others
+    let beneficiary_number = Number(prompt("Enter beneficiary's number"))
+    if (!Number.isNaN(beneficiary_number)) {
+        let amount = Number(prompt("Enter recharge amount"))
+        if ((!Number.isNaN(amount)) ) {
+            var confirmation = confirm(`Confirm recharge to ${beneficiary_number}`)
+            if (confirmation == true) {
+                // Perform third party recharge
+                alert(`Recharge to ${beneficiary_number} successful`)
+            }
+            else {
+                alert(`Recharge to ${beneficiary_number} unsuccessful. error!`)
+            }
+        }
+        else {
+            alert("Invalid transaction")
+        }
+
+    }
+    else {
+        alert("Invalid beneficiary phone number")
+        } 
+    }
+
+
+else if (choice === '3') {
+    // Process Data
+    let amount = Number(prompt("Enter data amount"))
+    if (!Number.isNaN(amount)) {
+        var confirmation = confirm("Confirm data recharge")
+        if (confirmation == true) {
+            // Perform data recharge
+            alert("Data recharge successful")
+        }
+        else {
+            alert("Data recharge unsuccessful.")
+        }
+    }
+    else {
+        alert("Invalid amount. Bye!")
+    }
+
+}
+
+
+
+else if (choice === '4') {
+    // Process Transfer
+    let ben_number = Number(prompt("Enter beneficiary's account number"))
+    if (!Number.isNaN(ben_number)) {
+        let amount = Number(prompt("Enter transfer amount"))
+        if ((!Number.isNaN(amount)) ) {
+            var confirmation = confirm(`Confirm transfer to ${beneficiary_number}`)
+            if (confirmation == true) {
+                // Perform transfer
+                alert(`Transfer to ${beneneficiary_number} successful`)
+            }
+            else {
+                alert("Transfer unsuccessful.")
+            }
+        }
+        else {
+            alert("Invalid transaction")
+        }
+
+    }
+    else {
+        alert("Invalid  phone number")
+        } 
+    }
+
+
+else {
+    alert("Sorry, the number you entered is incorret")
+}
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
