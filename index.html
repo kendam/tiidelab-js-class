@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // Bank USSD assignment
+    var victor = prompt("Welcome to VT Bank. How can we help you today? Reply\nA for Airtime-Self\nB for Airtime-Others\nC for Data\nD for Transfer").toUpperCase();
+
+    // Process begins
+    if (victor === 'A') {
+      // Airtime-Self
+      let amount = Number(prompt("Enter amount"));
+      if (!Number.isNaN(amount)) {
+        var confirmation = confirm(`Are you sure you want to recharge #${amount}?`)
+        if (confirmation == true) {
+          alert("Recharge successful!");
+        }
+        else {
+          alert("Recharge unsuccessful!");
+        }
+      }
+      else {
+        alert("Invalid amount! Try again");
+      }
+    }
+
+    else if (victor === 'B') {
+      // Airtime-Others
+      let victorFriend = Number(prompt("Enter Beneficiary's phone number"));
+      if (!Number.isNaN(victorFriend)) {
+        let amount = Number(prompt("Enter amount"));
+        if (!Number.isNaN(amount)) {
+          var confirmation = confirm(`Are you sure you want to recharge airtime of #${amount} for ${victorFriend}?`);
+          if (confirmation == true) {
+            alert(`Recharge of #${amount} for ${victorFriend} successful`);
+          }
+          else {
+            alert("Recharge unsuccessful");
+          }
+        }
+        else {
+          alert("Invalid amount!");
+        }
+      }
+      else {
+        alert("Invalid phone number!");
+      }
+    }
+
+    else if (victor === 'C') {
+      let amount = Number(prompt("Enter data amount"));
+      if (!Number.isNaN(amount)) {
+        var confirmation = confirm('Confirm data purchase');
+        if (confirmation == true) {
+          alert("Data purchase successful!");
+        }
+        else {
+          alert("Data purchase unsuccessful");
+        }
+      }
+      else {
+        alert("Invalid data amount. Try again");
+      }
+    }
+
+    else if (victor === 'D') {
+      let victorFriend = Number(prompt("Enter Beneficiary's account number"));
+      if (!Number.isNaN(victorFriend)) {
+        let amount = Number(prompt("Enter amount to be transferred"));
+        if (!Number.isNaN(amount)) {
+          var confirmation = confirm(`Confirm transfer of #${amount} to ${victorFriend}`);
+          if (confirmation == true) {
+            alert(`Transfer of #${amount} to ${victorFriend} successful`);
+          }
+          else {
+            alert("Transfer unsuccessful. Try again");
+          }
+        }
+        else {
+          alert("Invalid amount");
+        }
+      }
+      else {
+        alert("Invalid account number");
+      }
+    }
+
+  else {
+    alert("Sorry, your reply is invalid");
+  }
+  </script>
+</body>
+</html> 
