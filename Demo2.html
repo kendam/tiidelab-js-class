@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo 2</title>
+  </head>
+  <body>
+    <h1 style="text-align: center">BANK USSD ASSIGNMENT</h1>
+    <script>
+      // var name = prompt("Enter your name");
+      // alert("My name is " + name);
+      // alert(`Your name is ${name}`);
+      // var age = prompt("Enter your age");
+      // // alert(typeof age);
+      // age = Number(age);
+      // alert(typeof age);
+
+      // conditional statement
+      /*
+            1. if statement
+             2. if else statement
+             3.  else if statement
+            */
+
+      // 1. if statement
+      // if (age >= 30) {
+      //   alert("Congratulations!");
+      // }
+
+      // 2. if else statement
+
+      /* if (condition)
+            {
+              action
+            }
+            else
+            {
+              do something else
+            }
+            */
+
+      // if (age >= 30) {
+      //   alert("thats correct!");
+      // } else {
+      //   alert("please try again!");
+      // }
+
+      // else if statement
+
+      /*
+            if (condition1)
+            {
+              action 1
+            }
+            else if (condition 2)
+            {
+              action 2
+            }
+            else if (condition n)
+            {
+              Action n
+            }
+            else {
+
+            }
+            */
+
+      // if (age > 30) {
+      //   alert("thats correct!");
+      // } else if (age < 30) {
+      //   alert("she is a girl");
+      // } else if (age >= 30) {
+      //   alert("this is ok!!");
+      // } else age = 25;
+      // {
+      //   alert(" prompt ok");
+      // }
+
+      // var confirmation = confirm("Are you sure");
+      // if (confirmation == true) {
+      //   alert("Thanks for confirming");
+      // } else {
+      //   alert("oh oh!!!");
+      // }
+
+      // var Ussd = prompt("choose preferred option");
+      // if (ussd == true) {
+      //   alert("Airtime");
+      //   alert("Airtime for others");
+      // } else {
+      //   alert("press 0 to go back");
+      // }
+
+      // declaring the variable
+      var number = prompt(
+        "Please Select The Transaction To Perform \n 1.  Airtime-self \n 2. Airtime-Others \n 3. Buy Data \n 4. Transfer Data"
+      );
+
+      // convert the user input to a number
+      number = Number(number);
+
+      // Gave it conditionals based on what the user wants
+      if (number == 1) {
+        var amount = prompt("Please Enter The Amount");
+
+        alert(`You have been credited the amount of ${amount} Naira`);
+      } else if (number == 2) {
+        var otherPhoneNumber = prompt("Enter Recipient Phone Number");
+
+        var amount2 = prompt("Select Amount To Purchase");
+
+        alert(
+          `You Have Successfully Purchased ${amount2} Naira To Phone Number ${otherPhoneNumber}`
+        );
+      } else if (number == 3) {
+        var dataSubscription = prompt(
+          "Please Select A Plan \n 1. N100 for 100mb \n 2. N500 for 400mb \n 3. N1000 for 2gb \n 4. N5000 for 10gb "
+        );
+        var amount3 = prompt(
+          "You will be charged N100 for the purchase of 100MB  \n Daily Plan. Select \n 1. One-off \n 2. Auto-Renew"
+        );
+        alert(`you have successfully purchased ${amount3} Naira data`);
+
+        // var dataAmount = prompt("Enter phone number for data purchase");
+        // var amount3 = prompt("Select Amount to purchase");
+      } else if (number === 4) {
+        var dataPhoneNumber = prompt("Enter Phone Number To Transfer Data ");
+
+        var amount4 = prompt("Select Data Amount to send ");
+
+        alert(
+          `You Have Successfully Transferred ${amount4} data To Phone Number ${dataPhoneNumber}`
+        );
+      } else {
+        alert("Input Not Valid");
+      }
+    </script>
+  </body>
+</html>
