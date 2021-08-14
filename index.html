@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let welcomeResponse = prompt(`
+        Welcome to USSD banking
+        Please note that  #6.98 network charge will be applied to your
+        bank accountment for services on this channel.
+        1.Proceed
+        0.Back`
+    )
+
+    if (welcomeResponse === "0") {
+        alert("Thanks for using our ussd services")
+    } else if (welcomeResponse === "1") {
+        let proceedResponse = prompt(`
+            1.Airtime-Self
+            2.Airtime-Others
+            3.Data
+            4.Trsf-GTB
+            5.Trsf-Others`
+        )
+
+        let amount
+        if(proceedResponse === "1") {
+            amount = prompt(`Please enter amount:`)
+            if (amount >= 0){
+                confirm(`Do you want TopUp your account with #${amount}?`)
+            }
+            else {
+                alert("invalid input")
+            }
+        } else if (proceedResponse === "2") {
+            let request= prompt("Please enter 3rd party mobile number")
+            if (request == Number(request)){
+                amount = prompt(`Please enter amount:`)
+                if (amount >= 0){
+                    confirm(`Do you want to purchase airtime of #${amount} for ${request}?`)
+                }
+            }
+        } else if (proceedResponse === "3") {
+            let data = prompt(
+                `Purchase Data for:
+                1.Self
+                2.3rd Party`
+            )
+            if (data === "1"){
+                prompt(
+                    `Select 9Mobile bundle
+                    1) 100MB 1day #100
+                    2)650MB 1 day #200
+                    3)500MB  30days #500
+                    4)1.5GB 30days #1000
+                    5)2GB 30days #1200`
+                )
+            } else if(data === "2") {
+                let tel = prompt(`Please enter 3rd party mobile number:`)
+                if (tel == Number(tel)) {
+                    prompt(
+                        `Select Network bundle
+                        1) 100MB 1day #100
+                        2) 350MB 7 day #300
+                        3) 500MB 30days #500
+                        4) 1GB 30days #1000
+                        5) 2GB 30days #1200`
+                    )
+                }
+            }
+        } else if (proceedResponse === "4") {
+            amount = prompt(`Please enter amount:`)
+            if (amount >= 0){
+                prompt("Enter recipient's account number or phone no")
+            }
+        } else if (proceedResponse === "5") {
+            amount = prompt(`Please enter amount:`)
+            if (amount >= 0){
+                prompt("Please enter bank:")
+            }
+        } else {
+            alert("Invalid code entered, please try again with a valid input")
+        }
+
+    } else {
+        alert("Invalid code entered, please try again with a valid input")
+    }
+</script>
+</body>
+</html>
