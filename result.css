@@ -18,11 +18,17 @@ body {
 
 /* =================================== */
 /* The section of the container */
-.container {
-    height: 100vh;
-    display: flex;
+/* .container { */
+/* height: 100vh; */
+/* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
+/* position: relative; */
+
+/* } */
+
+#particles-js {
+    height: 100vh;
 }
 
 
@@ -35,6 +41,11 @@ section {
     padding: 20px;
     line-height: 40px;
     overflow: auto;
+    position: absolute;
+    top: 5%;
+    left: 25%;
+
+    /* transform: translate(10%); */
 }
 
 section h4 {
@@ -74,15 +85,38 @@ section button {
     margin-top: 20px;
 }
 
+
+
+
+
 /* ================================= */
 /* The section of the media query */
 
+@media screen and (min-width:1000px) {
+    section {
+        top: 20%;
+        left: 25%;
+    }
+}
+
+
+
 @media screen and (max-width:768px) {
     section {
-        width: 95%;
+        width: 85%;
+        top: 10%;
+        left: 5%;
     }
 
     section h2 {
         font-size: 25px;
+    }
+}
+
+
+@media screen and (max-width:425px) {
+    section {
+        width: 95%;
+        left: 2.5%;
     }
 }
