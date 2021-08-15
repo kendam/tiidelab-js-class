@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jimoh USSD Assignment</title>
+</head>
+<body>
+    <h1> Welcome to  USSD recharge menu </h1>
+
+
+    <script>
+        let ussd = prompt(`Choose Your Option
+        1 Airtime self
+        2 Airtime Others
+        3 Recharge for Data
+        4 Transfer
+        `);
+
+        ussd = Number(ussd);
+
+        const phoneNumberValidation = () => {
+            let phoneNumber = prompt(`Enter your phone number`);
+             phoneNumber = Number(phoneNumber);
+             if (!Number.isNaN(phoneNumber)) {
+                 let amount = prompt("Enter amount");
+                 amount = Number(amount);
+                 alert("Recharged Successfully");
+            } else {
+                    alert("incorrect phone number");        
+             }
+        }
+
+        
+        if (ussd === 1) {
+             phoneNumberValidation();
+        } else if (ussd === 2) {
+            let mobileNetwork = prompt(`Enter Mobile Network`);
+            phoneNumberValidation();
+        } else if (ussd == 3) {
+            let mobileNetwork = prompt(`Enter Mobile Network`);
+            let mobilePlan = prompt(`Choose Plan
+            1 Weekly Plan
+            2 Monthly Plan
+            3 Daily Plan
+            `)
+            mobilePlan = Number(mobilePlan);
+            if (mobilePlan === 1 || mobilePlan === 2 || mobilePlan === 3) {
+                phoneNumberValidation();
+            } else {
+                alert("incorrect selection")
+            }
+        } else if (ussd === 4) {
+            let mobileNetwork = prompt(`Enter Mobile Network`);
+            let phoneNumber = prompt(`Enter phone number`);
+             phoneNumber = Number(phoneNumber);
+             if (!Number.isNaN(phoneNumber)) {
+                 let amount = prompt("Enter amount");
+                 amount = Number(amount);
+                 alert("Transfer Successfully");
+            } else {
+                    alert("incorrect phone number");        
+             }
+        } else {
+            alert("You have entere the wrong input")
+        }
+
+        
+
+    </script>
+</body>
+</html>
