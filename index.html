@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    let welcomeMessage = 'Welcome to USSD BANKING'
+    alert(welcomeMessage)
+
+    let option = Number(prompt("Select an option  \n 1.Airtime Self \n 2.Airtime others \n 3.Data \n 4.Transfer"))
+
+    switch (option) {
+        case 1: 1
+            let amountOne = Number(prompt("Enter Amount"))
+            let confirmAmount = confirm(`You are about to purchase #${amountOne} airtime`)
+            confirmAmount == true ? alert(`You have been credited #${amountOne} airtime`) : alert("Back to start")
+
+            break;
+
+        case 2: 2
+            let amountTwo = Number(prompt("Enter Amount"))
+            let confirmAmountTwo = confirm(`You are about to purchase #${amountTwo} airtime to another number`)
+            let otherNumber = prompt("Enter beneficiary number")
+            confirmAmountTwo == true && otherNumber.length == 11 ? alert(`${otherNumber} have been credited #${amountTwo} airtime`) : alert("Back to start")
+
+            break;
+
+        case 3: 3
+            let amountThree = Number(prompt("Enter Amount"))
+            let confirmAmountThree = confirm(`You are about to purchase #${amountThree} data`)
+            confirmAmount == true ? alert(`You have been credited #${amountThree} data`) : alert("Back to start")
+
+            break;
+
+        case 4: 4
+            let accountNumber = prompt("Enter destination account number")
+            let amountToTransfer = Number(prompt("Enter Amount"))
+            let confirmTransferAmount = confirm(`You are about to transfer #${amountToTransfer} to ${accountNumber}`)
+            confirmAmount == true ? alert(`You have transferred #${amountToTransfer} to another account`) : alert("Back to start")
+
+            break;
+
+        default:
+            alert("You entered inavlid data, try again")
+            break;
+    }
+
+
+
+</script>
+
+</html>
