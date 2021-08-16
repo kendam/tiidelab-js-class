@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: rgb(6, 6, 49);
+}
+
+
+:root {
+    --primary-color: red;
+    --white: #fff;
+    --secondary-color: green;
+    --tetiary-color: orange;
+}
+
+/* =================================== */
+/* The section of the container */
+/* .container { */
+/* height: 100vh; */
+/* display: flex;
+    align-items: center;
+    justify-content: center; */
+/* position: relative; */
+
+/* } */
+
+#particles-js {
+    height: 100vh;
+}
+
+
+/* ======================================= */
+/* The section */
+section {
+    width: 50%;
+    background: var(--white);
+    text-align: center;
+    padding: 20px;
+    line-height: 40px;
+    overflow: auto;
+    position: absolute;
+    top: 5%;
+    left: 25%;
+
+    /* transform: translate(10%); */
+}
+
+section h4 {
+    color: var(--primary-color);
+    font-family: monospace;
+    font-size: 20px;
+}
+
+section p {
+    font-size: 20px;
+    color: var(--tetiary-color);
+    font-family: cursive;
+}
+
+section h2 {
+    color: var(--secondary-color);
+    font-weight: 900;
+    font-size: 35px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+section h5 {
+    color: var(--primary-color);
+    font-size: 18px;
+    font-family: cursive;
+}
+
+section button {
+    padding: 12px 25px;
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+
+
+
+
+/* ================================= */
+/* The section of the media query */
+
+@media screen and (min-width:1000px) {
+    section {
+        top: 20%;
+        left: 25%;
+    }
+}
+
+
+
+@media screen and (max-width:768px) {
+    section {
+        width: 85%;
+        top: 10%;
+        left: 5%;
+    }
+
+    section h2 {
+        font-size: 25px;
+    }
+}
+
+
+@media screen and (max-width:425px) {
+    section {
+        width: 95%;
+        left: 2.5%;
+    }
+}
